@@ -1,0 +1,63 @@
+{% load i18n %}
+{% load static %}
+
+<div class="px-0 landing_block row" id="slide2">
+    <div class="col col-lg-6 bg-warning landing_col ">
+        <div class="mx-auto text-left text-block">
+            <p class="mb-3 text-start lead">
+                {% blocktrans %}
+                    <b>6 млн людей в Україні</b> щодня ведуть боротьбу за доступ до питної води
+                {% endblocktrans %}
+            </p>
+            <p class="mb-3 text-start lead">
+                {% blocktrans %}
+                    <strong>З квітня 2022</strong> маріупольці втратили доступ до чистої питної води
+                {% endblocktrans %}
+
+            </p>
+            <a href="#" class="btn btn-dark p-3 w-100 text-uppercase fw-500 mt-5">
+                {% trans "Зробити внесок" %}
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-6 px-0 landing_col">
+        <div class="mx-auto text-left text-block">
+            <div class="text-primary">
+                <h2 class="text-uppercase fw-bold mb-5">
+                    {% trans "Доступ до питної води" %}
+                </h2>
+                <h4 class="mb-4">
+                    {% trans "Очисні системи води в будь-яких умовах місцевості" %}
+                </h4>
+            </div>
+            <div>
+                <p>
+                    {% blocktrans %}
+                        Дії російського агресора в Україні підтвердили на практиці, що об’єкти
+                        водопостачання
+                        часто стають прямими або опосередкованими об’єктами для ударів із різних видів
+                        зброї.
+                        У населених пунктах, які постраждали від агресії, питна вода є одним із найгостріших
+                        питань гуманітарної катастрофи.
+                    {% endblocktrans %}
+                </p>
+                <img class="d-block mx-auto mb-5 w-100" src="{% static "reua/img/water_machine.png" %}" alt="">
+                <p>
+                    {% blocktrans %}
+                        <b>Мобільна водоочисна установка «БС-100»</b> вирішує проблему забезпечення чистою питною водою
+                        населення у випадку пошкодження центрального водопостачання.
+                    {% endblocktrans %}
+                </p>
+                <p>
+                    {% blocktrans %}
+                        Технологічне ноу-хау системи враховує унікальні умови кожного населеного пункту та
+                        передбачає очищення вхідної води з будь-якого джерела водопостачання будь-якого ступеню забрудненості.
+                    {% endblocktrans %}
+                </p>
+                <a href="#" class="btn btn-outline-dark p-3 w-100 text-uppercase fw-500 mt-5">
+                    {% trans "Технічні характеристики" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

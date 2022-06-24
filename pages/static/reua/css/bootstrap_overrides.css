@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.btn-lg {
+    /*font-size: 1.5rem;*/
+    font-family: var(--bs-header-font-family);
+}
+.btn-group-lg>.btn, .btn-lg {
+    border-radius: 0.5rem;
+    border-width: 4px;
+}
+.btn {
+    font-family: var(--bs-header-font-family);
+    font-size: .875rem;
+}
+
+.btn-warning {
+    background-color: var(--bs-warning);
+    border-color: var(--bs-warning);
+}
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+b, strong {
+    font-weight: bold;
+}
+:root{
+    --bs-body-font-family: 'PT Sans', sans-serif;
+    --bs-header-font-family: 'Rubik', sans-serif;
+    --bs-body-line-height: 1.2;
+    --bs-dark-rgb: 39,39,39;
+    --bs-warning-rgb: 255,215,0;
+    --bs-warning: #ffd700;
+    --bs-yellow: #ffd700;
+    --bs-primary-rgb: 0,87,184;
+    --bs-primary: #0057b8;
+    --bs-blue: #0057b8;
+}

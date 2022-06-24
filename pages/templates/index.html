@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}
+    {% trans "Головна сторінка" %}
+{% endblock %}
+{% block body %}
+    <main>
+        <div class="container-fluid position-relative">
+            <div class="fullscreen-bg__video p-0">
+                <video loop muted autoplay poster="{% static "reua/img/video-screenshot.png" %}">
+                    <source src="{% static "reua/video/MARIUPOL_DRAMTEATR_BZ_x264_002.mp4" %}" type="video/mp4">
+                </video>
+            </div>
+            {% include "parts/slide1.html" %}
+        </div>
+        <div class="container-fluid">
+            {% include "parts/slide2.html" %}
+        </div>
+    </main>
+    {{ block.super }}
+{% endblock %}
