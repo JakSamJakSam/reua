@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from os import path
+import os
 from django.utils.translation import gettext_lazy as _
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -130,7 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -161,13 +161,13 @@ LOGGING = {
         'application': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': path.join(LOG_ROOT, 'application.log'),
+            'filename': os.path.join(LOG_ROOT, 'application.log'),
             'formatter': 'verbose',
         },
         'db': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': path.join(LOG_ROOT, 'db.log'),
+            'filename': os.path.join(LOG_ROOT, 'db.log'),
         },
     },
     'loggers': {
