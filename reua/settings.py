@@ -110,12 +110,12 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGES = [
     ('uk', "UA"),
     ('en', "EN"),
-    ('ru', "RU"),
+    # ('ru', "RU"),
 ]
 
 
 LANGUAGE_CODE = 'uk'
-TIME_ZONE = 'Europe/Kyiv'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 
@@ -133,3 +133,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SITE_ID = 1
+
+from .liqpay_settings import LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY, LIQPAY_SANDOX_MODE

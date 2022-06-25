@@ -18,5 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='index')
+    path('', IndexView.as_view(), name='index'),
+    path('make-donation', PaymentStart.as_view(), name='donation'),
+    path('payment/<uuid:order_id>', PaymentFinish.as_view(), name='payment')
 ]
