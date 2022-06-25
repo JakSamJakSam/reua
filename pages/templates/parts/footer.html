@@ -1,0 +1,32 @@
+{% load i18n %}
+{% load static %}
+
+<div class="text-center footer text-body landing_row row">
+    <div class="col col-lg-6 landing_col  ">
+        <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA"/>
+    </div>
+    <div class="col col-lg-6 landing_col">
+        <div class="ms-auto" style="width: 200px">
+            <div class="small mb-3">
+                Зв’язатись з нами та підписатися на нас можна:
+            </div>
+            <a href="mailto://info@reua.com.ua" class="btn btn-sm btn-outline-dark w-100 position-relative mb-2">
+                <div class="position-absolute" style="top: 0; left: 50%">
+                    <i class="fa-solid fa-envelope d-block fa-lg" style="margin: -50% 0 0-50% ;"></i>
+                </div>
+                {% trans "info@reua.com.ua" %}
+            </a>
+            <div class="d-flex gap-2 justify-content-between w-100">
+                <a href="#" class="btn btn-dark">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="btn btn-dark">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="btn btn-dark">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

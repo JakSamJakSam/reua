@@ -1,0 +1,137 @@
+{% load i18n %}
+{% load static %}
+
+<div class="px-0 landing_block row" id="slide3">
+    <div class="col col-lg-6 bg-dark landing_col ">
+        <div class="mx-auto text-left text-block text-white">
+            <h2 class="text-uppercase fw-bold mb-4 text-warning">
+                {% trans "Відбудова житла" %}
+            </h2>
+            <h4 class="mb-4">
+                {% trans "Екосистемні містечка. 350 сімей за 6 місяців" %}
+            </h4>
+            <p>
+                {% blocktrans %}
+                    Для забезпечення нормальних, комфортних умов для проживання необхідна реалізація
+                    проектів тимчасового та постійного житла.
+                {% endblocktrans %}
+            </p>
+            <p class="mb-3">
+                {% blocktrans %}
+                    Реалізація проекту забезпечить потребу громадян, які втратили житло, у збереженні гідного способу
+                    життя
+                    та соціалізації в новому селищі, а також створити робочі місця, що дасть можливість гідно жити й
+                    планувати своє майбутнє.
+                {% endblocktrans %}
+            </p>
+            <h4 class="text-uppercase mt-5 text-warning">
+                {% trans "1 ЕТАП" %}
+            </h4>
+            <h5 class="mb-4">
+                {% trans "Тимчасове модульне житло" %}
+            </h5>
+            <p>
+                {% blocktrans %}
+                    Будівництво тимчасового житла для внутрішньо переміщених осіб з автономною системою
+                    електропостачання, водопостачання, водовідведення та опалення.<br/>
+                    Модульна система являє собою універсальний конструктор, що може адаптуватись
+                    під будь-яку відведену місцевість.
+                {% endblocktrans %}
+            </p>
+            <img src="{% static "reua/img/temporary_house.png" %}" alt="{% trans "Тимчасове модульне житло" %}"/>
+            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-5">
+                {% trans "Детальний проект" %}
+                <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col col-lg-6 px-0 landing_col">
+        <div class="mx-auto text-left text-block">
+            <div class="text-white">
+                <p class="lead lh-lg">
+                    {% blocktrans %}
+                        В результаті збройної агресії РФ проти України значна кількість жителів Маріуполя залишилась
+                        без житла та була змушена переселитись в інші області України
+                    {% endblocktrans %}
+                </p>
+                <div>
+                    <a href="{% url "donation" %}" class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5">
+                        {% trans "Зробити внесок" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="px-0 landing_block row" id="slide3_1">
+    <div class="col col-lg-6 bg-dark landing_col ">
+        <div class="mx-auto text-left text-block text-white">
+            <h4 class="text-uppercase text-warning">
+                {% trans "2 ЕТАП" %}
+            </h4>
+            <h5 class="mb-4">
+                {% trans "Постійне житло з власною екосистемою" %}
+            </h5>
+            <p>
+                {% blocktrans %}
+                    Внутрішньо переміщені особи з Маріуполя, які втратили дім, потребують не лише фактичного житла,
+                    але й емоційного відчуття домівки. Саме тому, план постійного житла  спроектований як автономна
+                    екосистема, з атмосферою довоєнного міста Маріуполь.
+                {% endblocktrans %}
+            </p>
+            <p>
+                {% blocktrans %}
+                    У проект залучені світові технології швидкого та екологічного будівництва з використанням
+                    попереднього виготовлених конструкцій. Вони дозволяють оптимальним людським ресурсом та в стислі
+                    терміни побудувати якісне та безпечне житло
+                {% endblocktrans %}
+            </p>
+            <p>
+                {% blocktrans %}
+                    Типові 4-поверхові будинки з квартирною площею 30-35 м кв. - ідеальне рішення для найкращого
+                    використання наявної площі будівлі.
+                {% endblocktrans %}
+            </p>
+            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-5">
+                {% trans "Детальний проект" %}
+                <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col col-lg-6 px-0 landing_col">
+
+    </div>
+</div>
+<div class="px-0 landing_block row" id="slide3_2">
+    <div class="col col-lg-6 bg-dark landing_col ">
+        <div class="mx-auto text-left text-block text-white">
+            <h4 class="text-uppercase text-warning">
+                {% trans "3 ЕТАП" %}
+            </h4>
+            <h5 class="mb-4">
+                {% trans "Індустріальні парки" %}
+            </h5>
+            <p>
+                {% blocktrans %}
+                    Повноцінне повернення до повсякденного життя внутрішньо переміщених осіб можливе лише при їх
+                    впевненості у завтрашньому дні. Це потребує розширення екосистеми містечка до створення
+                    супроводжуючого індустріального парку, який зможе забезпечити жителів постійними робочими місцями,
+                    а містечко – власним виробництвом.
+                {% endblocktrans %}
+            </p>
+            <p>
+                {% blocktrans %}
+                    Створене основне будівниче виробництво дасть можливість в подальшому розвиватися суміжним
+                    виробництвам: будівельних матеріалів, меблів, вікон тощо.
+                {% endblocktrans %}
+            </p>
+            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-5">
+                {% trans "Детальний проект" %}
+                <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col col-lg-6 px-0 landing_col">
+
+    </div>
+</div>

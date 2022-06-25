@@ -2,7 +2,7 @@
 {% load static %}
 
 <div class="text-center bg-dark text-white landing_row row video_overlay" id="slide1">
-    <div class="col-lg-6 landing_col  ">
+    <div class="col col-lg-6 landing_col  ">
         <div class="mx-auto text-left text-block">
             <img class="d-block mb-5" src="{% static "reua/img/logo.png" %}" alt="">
             <p class="mb-3 text-start">
@@ -19,14 +19,14 @@
             </p>
             <ul class="list list-unstyled d-flex flex-row gap-4 ">
                 <li class="flex-fill w-50">
-                        <a href="#slide2" class="btn btn btn-outline-light p-3 w-100 text-uppercase">
-                            {% trans "Питна вода" %}
-                        </a>
+                    <a href="#slide2" class="btn btn btn-outline-light p-3 w-100 text-uppercase">
+                        {% trans "Питна вода" %}
+                    </a>
                 </li>
                 <li class="flex-fill w-50">
-                        <span class="btn btn btn-outline-light p-3 w-100 text-uppercase">
-                            {% trans "Відбудова житла" %}
-                        </span>
+                    <a href="#slide3" class="btn btn btn-outline-light p-3 w-100 text-uppercase">
+                        {% trans "Відбудова житла" %}
+                    </a>
                 </li>
             </ul>
             <a href="{% url "donation" %}" class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5">
@@ -34,7 +34,7 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-6 landing_col">
+    <div class="col col-lg-6 landing_col">
         <div class="mx-auto text-left h-100 d-flex flex-column justify-content-between text-block">
             <div class="d-flex gap-2 justify-content-end ">
                 {% get_available_languages as languages %}
