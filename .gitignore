@@ -1,3 +1,4 @@
 .idea
 db.sqlite3
 reua/liqpay_settings.py
+/reua/override_settings.py
