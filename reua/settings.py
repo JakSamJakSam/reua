@@ -29,7 +29,10 @@ try:
 except ImportError:
     DEBUG = False
 
-ALLOWED_HOSTS = []
+try:
+    from .override_settings import ALLOWED_HOSTS
+except ImportError:
+    ALLOWED_HOSTS = []
 
 
 # Application definition
