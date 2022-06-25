@@ -140,3 +140,45 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 
 from .liqpay_settings import LIQPAY_PUBLIC_KEY, LIQPAY_PRIVATE_KEY, LIQPAY_SANDOX_MODE
+
+######### LOGS #########################
+LOG_ROOT = os.path.join(BASE_DIR, 'log')
+if not os.path.exists(LOG_ROOT):
+    os.makedirs(LOG_ROOT, mode=0o755, exist_ok=True)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format':
+                '{levelname} {asctime} {module} {message}',
+            'style':
+                '{',
+        },
+    },
+    'handlers': {
+        'application': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': path.join(LOG_ROOT, 'application.log'),
+            'formatter': 'verbose',
+        },
+        'db': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': path.join(LOG_ROOT, 'db.log'),
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['application'],
+            'level': 'DEBUG',
+        },
+        'django.db.backends': {
+            'level': 'DEBUG',
+            # 'level': 'INFO',
+            'handlers': ['db'],
+        },
+    }
+}
