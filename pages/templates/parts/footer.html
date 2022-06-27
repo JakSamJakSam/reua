@@ -2,11 +2,13 @@
 {% load static %}
 
 <div class="text-center footer text-body landing_row row">
-    <div class="col col-lg-6 landing_col  ">
-        <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA"/>
+    <div class="col col-lg-6 landing_col d-flex  ">
+        <div class="mx-5 mt-auto">
+            <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA" class="w-100"/>
+        </div>
     </div>
-    <div class="col col-lg-6 landing_col">
-        <div class="ms-auto" style="width: 200px">
+    <div class="col col-lg-6 landing_col d-flex">
+        <div class="ms-auto mt-auto" style="width: 167px">
             <div class="small mb-3">
                 Зв’язатись з нами та підписатися на нас можна:
             </div>
@@ -16,15 +18,15 @@
                 </div>
                 {% trans "info@reua.com.ua" %}
             </a>
-            <div class="d-flex gap-2 justify-content-between w-100">
-                <a href="#" class="btn btn-dark">
-                    <i class="fa-brands fa-facebook-f"></i>
+            <div class="d-flex gap-1 justify-content-between w-100">
+                <a href="#" class="btn btn-dark px-2">
+                    <i class="fa-brands fa-facebook-f fa-lg fa-fw"></i>
                 </a>
-                <a href="#" class="btn btn-dark">
-                    <i class="fa-brands fa-instagram"></i>
+                <a href="#" class="btn btn-dark px-2">
+                    <i class="fa-brands fa-instagram fa-lg fa-fw"></i>
                 </a>
-                <a href="#" class="btn btn-dark">
-                    <i class="fa-brands fa-telegram"></i>
+                <a href="#" class="btn btn-dark px-2">
+                    <i class="fa-solid fa-paper-plane fa-lg fa-fw"></i>
                 </a>
             </div>
         </div>

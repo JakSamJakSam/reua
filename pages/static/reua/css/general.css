@@ -1,6 +1,6 @@
 
 html{
-    font-size: 24px;
+    font-size: 20px;
 }
 .landing_block{
     min-height: 100vh;
@@ -29,12 +29,16 @@ html{
 .fullscreen-bg__video>video{
     width: 100%;
 }
+
+
 .video_overlay{
     background-color: rgba(0,0,0,0.6)!important;
 }
 
+
 .text-block{
-    width: 580px;
+    max-width: 580px;
+    width: 100%;
 }
 
 .lng{
@@ -61,8 +65,8 @@ html{
     background-size: cover;
 }
 
-#slide3 > .col:last-child{
-    background: url("../img/slide3_bg.png") no-repeat center;
+#slide3 {
+    background: url("../img/slide3_bg.png") no-repeat center right;
     background-size: cover;
 }
 

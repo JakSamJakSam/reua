@@ -1,0 +1,19 @@
+@media (max-width: 1600px){
+    .fullscreen-bg__video>video{
+        width: 115%;
+    }
+}
+@media (max-width: 1400px){
+    .fullscreen-bg__video>video{
+        width: 140%;
+    }
+    .landing_col{
+        padding: 80px 40px;
+    }
+}
+
+@media (max-width: 1200px){
+    .fullscreen-bg__video>video{
+        width: 170%;
+    }
+}

@@ -2,7 +2,7 @@
 {% load static %}
 
 <div class="px-0 landing_block row" id="slide3">
-    <div class="col col-lg-6 bg-dark landing_col ">
+    <div class="col col-lg-6 bg-dark landing_col pb-0">
         <div class="mx-auto text-left text-block text-white">
             <h2 class="text-uppercase fw-bold mb-4 text-warning">
                 {% trans "Відбудова житла" %}
@@ -16,7 +16,7 @@
                     проектів тимчасового та постійного житла.
                 {% endblocktrans %}
             </p>
-            <p class="mb-3">
+            <p>
                 {% blocktrans %}
                     Реалізація проекту забезпечить потребу громадян, які втратили житло, у збереженні гідного способу
                     життя
@@ -24,6 +24,27 @@
                     планувати своє майбутнє.
                 {% endblocktrans %}
             </p>
+        </div>
+    </div>
+    <div class="col col-lg-6 landing_col pb-0">
+        <div class="mx-auto text-left text-block h-100 d-flex flex-column">
+            <div class="text-white">
+                <p class="lead lh-base">
+                    {% blocktrans %}
+                        В результаті збройної агресії РФ проти України значна кількість жителів Маріуполя залишилась
+                        без житла та була змушена переселитись в інші області України
+                    {% endblocktrans %}
+                </p>
+            </div>
+            <div class="mt-auto mb-3">
+                <a href="{% url "donation" %}" class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5">
+                    {% trans "Зробити внесок" %}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col col-lg-6 bg-dark landing_col pt-5">
+        <div class="mx-auto text-left text-block text-white">
             <h4 class="text-uppercase mt-5 text-warning">
                 {% trans "1 ЕТАП" %}
             </h4>
@@ -38,30 +59,15 @@
                     під будь-яку відведену місцевість.
                 {% endblocktrans %}
             </p>
-            <img src="{% static "reua/img/temporary_house.png" %}" alt="{% trans "Тимчасове модульне житло" %}"/>
+            <img class="w-100" src="{% static "reua/img/temporary_house.png" %}"
+                 alt="{% trans "Тимчасове модульне житло" %}"/>
             <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-5">
                 {% trans "Детальний проект" %}
                 <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
             </a>
         </div>
     </div>
-    <div class="col col-lg-6 px-0 landing_col">
-        <div class="mx-auto text-left text-block">
-            <div class="text-white">
-                <p class="lead lh-lg">
-                    {% blocktrans %}
-                        В результаті збройної агресії РФ проти України значна кількість жителів Маріуполя залишилась
-                        без житла та була змушена переселитись в інші області України
-                    {% endblocktrans %}
-                </p>
-                <div>
-                    <a href="{% url "donation" %}" class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5">
-                        {% trans "Зробити внесок" %}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 <div class="px-0 landing_block row" id="slide3_1">
     <div class="col col-lg-6 bg-dark landing_col ">
