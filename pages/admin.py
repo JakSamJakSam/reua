@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from pages.models import Project, BankTransferInfo
+
+admin.site.register(Project, admin.ModelAdmin)
+admin.site.register(BankTransferInfo, admin.ModelAdmin)

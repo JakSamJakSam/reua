@@ -7,14 +7,21 @@ from django.core.cache import cache
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import TemplateView, FormView, RedirectView
-from django.utils.translation import gettext_lazy as _, get_language_from_request, get_language
+from django.utils.translation import gettext_lazy as _, get_language
 from liqpay import LiqPay
 
 from pages.forms import PaymentForm
+from pages.models import Project
 
 
 class IndexView(TemplateView):
     template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        ctx = super(IndexView, self).get_context_data(**kwargs)
+        ctx['projects'] = Project.objects.all() #TODO Cashe it
+        return ctx
+
 
 class PaymentStart(FormView):
     template_name = "payment/new_payment.html"

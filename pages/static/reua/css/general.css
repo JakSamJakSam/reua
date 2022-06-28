@@ -86,3 +86,6 @@ html{
   background-image: -ms-linear-gradient( -90deg, rgb(226,226,226) 56%, rgb(114,114,114) 100%);
 }
 
+.offcanvas-payment {
+    width: 50%;
+}
