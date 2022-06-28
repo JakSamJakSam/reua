@@ -186,3 +186,5 @@ LOGGING = {
         },
     }
 }
+
+CSRF_TRUSTED_ORIGINS = ['https://reua.com.ua']
