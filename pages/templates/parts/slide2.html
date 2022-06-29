@@ -1,6 +1,8 @@
 {% load i18n %}
 {% load static %}
+{% load project_tags %}
 
+{% get_project_info "water" as proj_water_info %}
 <div class="px-0 landing_block row" id="slide2">
     <div class="col col-lg-6 bg-warning landing_col ">
         <div class="mx-auto text-left text-block">
@@ -15,7 +17,8 @@
                 {% endblocktrans %}
 
             </p>
-            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" class="btn btn-dark p-3 w-100 text-uppercase fw-500 mt-5">
+            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
+               class="btn btn-dark p-3 w-100 text-uppercase fw-500 mt-5 {% if proj_water_info.disabled %} disabled {% endif %}">
                 {% trans "Зробити внесок" %}
             </a>
         </div>
@@ -51,7 +54,8 @@
                 <p>
                     {% blocktrans %}
                         Технологічне ноу-хау системи враховує унікальні умови кожного населеного пункту та
-                        передбачає очищення вхідної води з будь-якого джерела водопостачання будь-якого ступеню забрудненості.
+                        передбачає очищення вхідної води з будь-якого джерела водопостачання будь-якого ступеню
+                        забрудненості.
                     {% endblocktrans %}
                 </p>
                 <a href="#" class="btn btn-outline-dark p-3 w-100 text-uppercase fw-500 mt-5">

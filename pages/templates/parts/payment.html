@@ -10,12 +10,12 @@
     <div class="offcanvas-header text-block mx-auto ">
         <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA logo" class="w-100"/>
     </div>
-    <div class="offcanvas-body text-block mx-auto">
-        <h3 class="fw-normal mb-5">{% trans "Оберіть категорію внеску" %}</h3>
+    <div class="offcanvas-body mt-5 text-block mx-auto">
+        <h3 class="fw-normal ">{% trans "Оберіть категорію внеску" %}</h3>
         <ul class="list-unstyled d-flex flex-column gap-4">
             {% for proj in projects %}
             <li>
-                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3">
+                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3 {% if proj.disabled %} disabled {% endif %}">
                     {{ proj.title }}
                 </a>
             </li>
@@ -26,16 +26,19 @@
 
 <div class="offcanvas offcanvas-start bg-dark offcanvas-payment" tabindex="-1" id="payment-select-payment-type">
     <div class="d-flex mx-2">
-        <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="offcanvas"
-                aria-label="Close">
-            <i class="fa-solid fa-xmark fa-2x"></i>
-        </button>
+        <a href="#payment-select-project" data-bs-toggle="offcanvas" class="btn btn-dark ms-auto">
+            <i class="fa-solid fa-arrow-left fa-2x"></i>
+        </a>
+{#        <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="offcanvas"#}
+{#                aria-label="Close">#}
+{#            <i class="fa-solid fa-xmark fa-2x"></i>#}
+{#        </button>#}
     </div>
     <div class="offcanvas-header text-block mx-auto ">
         <img src="{% static "reua/img/logo.png" %}" alt="reUA logo" class="w-100"/>
     </div>
-    <div class="offcanvas-body text-block mx-auto">
-        <h3 class="fw-normal mb-5 text-white">{% trans "Оберіть категорію внеску" %}</h3>
+    <div class="offcanvas-body mt-5 text-block mx-auto">
+        <h3 class="fw-normal text-white">{% trans "Оберіть категорію внеску" %}</h3>
         <ul class="list-unstyled d-flex flex-column gap-4">
             <li>
                 <a href="https://reua.pay.whitepay.com/?fiat=true" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3">

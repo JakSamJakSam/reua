@@ -6,6 +6,7 @@ class Project(models.Model):
     identity = models.CharField(max_length=10, unique=True, verbose_name=_('Ідентифікатор'))
     name = models.CharField(max_length=100, verbose_name=_('Найменування'))
     name_en = models.CharField(max_length=100, verbose_name=_('Найменування (англ.)'), blank=True, default='')
+    disabled = models.BooleanField(verbose_name=_('Відключено'), blank=True, default=False)
 
     @property
     def title(self):
