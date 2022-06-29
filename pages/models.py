@@ -37,3 +37,28 @@ class BankTransferInfo(models.Model):
         verbose_name = _("Реквізит банківського переводу")
         verbose_name_plural = _("Реквізити банківського переводу")
         ordering = ('id',)
+
+
+class ConsituentsDocs(models.Model):
+    name = models.CharField(max_length=100, verbose_name=_('Найменування'))
+    name_en = models.CharField(max_length=100, verbose_name=_('Найменування (англ.)'), blank=True, default='')
+    file = models.FileField(upload_to='consituents_docs', verbose_name=_('Файл'))
+    type = models.CharField(
+        max_length=3,
+        verbose_name=_("Тип файлу"),
+        choices=(('pdf', 'pdf'),)
+    )
+
+    @property
+    def title(self):
+        lg = get_language()
+        localized_title = getattr(self, f'name_{lg}', self.name)
+        return localized_title if localized_title else self.name
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("Установчий документ")
+        verbose_name_plural = _("Установчи документи")
+        ordering = ('id',)

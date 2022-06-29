@@ -11,7 +11,7 @@ from django.utils.translation import gettext_lazy as _, get_language
 from liqpay import LiqPay
 
 from pages.forms import PaymentForm
-from pages.models import Project
+from pages.models import Project, ConsituentsDocs
 
 
 class IndexView(TemplateView):
@@ -20,6 +20,7 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         ctx = super(IndexView, self).get_context_data(**kwargs)
         ctx['projects'] = Project.objects.all() #TODO Cashe it
+        ctx['consituents_docs'] = ConsituentsDocs.objects.all() #TODO Cashe it
         return ctx
 
 

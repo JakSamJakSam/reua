@@ -3,28 +3,22 @@
 
 <div class="text-center footer text-body landing_row row ">
     <div class="landing_col d-flex ">
-        <div class="mx-5 mt-auto text-block ">
-            <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA" class="w-100"/>
+        <div class="mx-5 mt-auto flex-grow-1 w-100">
+            <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA" class="h-100"/>
         </div>
-        <div>
-            <address>
-                {% trans "м. Київ, вул. Попудренка, 34" %}
-            </address>
-            {% trans "тел."%}<a href="tel://+380956788844">+38 095 678 88 44</a>
-            <a href="#">
-                {% trans "Договір публічної оферти" %}
-            </a>
-            <a href
+        <div class="mt-auto flex-grow-1 w-100 d-xxl-block d-none">
+            {% include "parts/footer/addr.html" %}
+        </div>
+        <div class="flex-column gap-2 mt-auto mx-3 d-xxl-flex d-none" >
+            <img src="{% static "reua/img/visa_mastercard.png" %}" alt="logo" />
+            <img src="{% static "reua/img/verified_ukraine_donation_list.png" %}" alt="logo" />
         </div>
         <div class="ms-auto mt-auto" style="width: 167px">
             <div class="small mb-3">
                 Зв’язатись з нами та підписатися на нас можна:
             </div>
-            <a href="mailto://info@reua.com.ua" class="btn btn-sm btn-outline-dark w-100 position-relative mb-2">
-                <div class="position-absolute" style="top: 0; left: 50%">
-                    <i class="fa-solid fa-envelope d-block fa-lg" style="margin: -50% 0 0-50% ;"></i>
-                </div>
-                {% trans "info@reua.com.ua" %}
+            <a href="mailto://info@reua.com.ua" class="btn btn-outline-dark w-100 mb-2">
+                <i class="fa-solid fa-envelope fa-lg"></i>
             </a>
             <div class="d-flex gap-1 justify-content-between w-100">
                 <a href="#" class="btn btn-dark px-2">
@@ -38,5 +32,14 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="landing_col d-flex pt-0 ">
+        <div class="mt-auto flex-grow-1 w-100 d-xxl-none d-flex">
+            {% include "parts/footer/addr.html" %}
         </div>
+        <div class="flex-column gap-2 mt-auto mx-3 d-xxl-none d-flex" >
+            <img src="{% static "reua/img/visa_mastercard.png" %}" alt="logo" />
+            <img src="{% static "reua/img/verified_ukraine_donation_list.png" %}" alt="logo" />
+        </div>
+    </div>
 </div>
