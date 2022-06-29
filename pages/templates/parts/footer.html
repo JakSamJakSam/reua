@@ -1,13 +1,21 @@
 {% load i18n %}
 {% load static %}
 
-<div class="text-center footer text-body landing_row row">
-    <div class="col col-lg-6 landing_col d-flex  ">
-        <div class="mx-5 mt-auto">
+<div class="text-center footer text-body landing_row row ">
+    <div class="landing_col d-flex ">
+        <div class="mx-5 mt-auto text-block ">
             <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA" class="w-100"/>
         </div>
-    </div>
-    <div class="col col-lg-6 landing_col d-flex">
+        <div>
+            <address>
+                {% trans "м. Київ, вул. Попудренка, 34" %}
+            </address>
+            {% trans "тел."%}<a href="tel://+380956788844">+38 095 678 88 44</a>
+            <a href="#">
+                {% trans "Договір публічної оферти" %}
+            </a>
+            <a href
+        </div>
         <div class="ms-auto mt-auto" style="width: 167px">
             <div class="small mb-3">
                 Зв’язатись з нами та підписатися на нас можна:
@@ -30,5 +38,5 @@
                 </a>
             </div>
         </div>
-    </div>
+        </div>
 </div>

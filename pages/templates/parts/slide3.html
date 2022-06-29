@@ -37,7 +37,8 @@
                 </p>
             </div>
             <div class="mt-auto mb-3">
-                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5">
+                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
+                   class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5">
                     {% trans "Зробити внесок" %}
                 </a>
             </div>
@@ -98,7 +99,10 @@
                     використання наявної площі будівлі.
                 {% endblocktrans %}
             </p>
-            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-5">
+            <img class="w-100 my-5" src="{% static "reua/img/permanent_house.png" %}"
+                 alt="{% trans "Постійне житло з власною екосистемою" %}"/>
+
+            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 ">
                 {% trans "Детальний проект" %}
                 <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
             </a>
@@ -131,7 +135,9 @@
                     виробництвам: будівельних матеріалів, меблів, вікон тощо.
                 {% endblocktrans %}
             </p>
-            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-5">
+            <img class="w-100 my-5" src="{% static "reua/img/industrial_park.png" %}"
+                 alt="{% trans "Індустріальні парки" %}"/>
+            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 ">
                 {% trans "Детальний проект" %}
                 <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
             </a>
