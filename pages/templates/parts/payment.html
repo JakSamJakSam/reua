@@ -10,8 +10,8 @@
     <div class="offcanvas-header text-block mx-auto ">
         <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA logo" class="w-100"/>
     </div>
-    <div class="offcanvas-body mt-5 text-block mx-auto">
-        <h1 class="fw-normal mb-5">{% trans "Оберіть категорію внеску" %}</h1>
+    <div class="offcanvas-body text-block mx-auto">
+        <h3 class="fw-normal mb-5">{% trans "Оберіть категорію внеску" %}</h3>
         <ul class="list-unstyled d-flex flex-column gap-4">
             {% for proj in projects %}
             <li>
@@ -34,8 +34,8 @@
     <div class="offcanvas-header text-block mx-auto ">
         <img src="{% static "reua/img/logo.png" %}" alt="reUA logo" class="w-100"/>
     </div>
-    <div class="offcanvas-body mt-5 text-block mx-auto">
-        <h1 class="fw-normal mb-5 text-white">{% trans "Оберіть категорію внеску" %}</h1>
+    <div class="offcanvas-body text-block mx-auto">
+        <h3 class="fw-normal mb-5 text-white">{% trans "Оберіть категорію внеску" %}</h3>
         <ul class="list-unstyled d-flex flex-column gap-4">
             <li>
                 <a href="https://reua.pay.whitepay.com/?fiat=true" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3">
