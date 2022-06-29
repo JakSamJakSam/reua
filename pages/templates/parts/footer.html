@@ -2,13 +2,9 @@
 {% load static %}
 
 <div class="text-center footer text-body landing_col row ">
-{#    <div class="landing_col_ d-flex ">#}
-        {#        <div class="mx-5 mt-auto flex-grow-1 w-100">#}
         <div class="col-xl-4 d-flex" style="background: url({% static "reua/img/footer_logo.png" %}) no-repeat bottom center; background-size: contain">
-{#            <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA" class="w-100 mt-auto"/>#}
         </div>
         <div class="col-xxl-5 col-xl-4">
-            {#        <div class="mt-auto flex-grow-1 w-100 d-xxl-block d-none">#}
             {% include "parts/footer/addr.html" %}
         </div>
         <div class="d-flex flex-row col-xxl-3 col-xl-4">
@@ -20,30 +16,21 @@
                 <div class="small mb-3">
                     Зв’язатись з нами та підписатися на нас можна:
                 </div>
-                <a href="mailto://info@reua.com.ua" class="btn btn-outline-dark w-100 mb-2">
+                <a href="mailto://{{ address.email }}"
+                   class="btn btn-outline-dark w-100 mb-2 {% if not address.email %} disabled {% endif %}">
                     <i class="fa-solid fa-envelope fa-lg"></i>
                 </a>
                 <div class="d-flex gap-1 justify-content-between w-100">
-                    <a href="#" class="btn btn-dark px-2">
+                    <a href="{{ address.facebook }}" class="btn btn-dark px-2 {% if not address.facebook %} disabled {% endif %}">
                         <i class="fa-brands fa-facebook-f fa-lg fa-fw"></i>
                     </a>
-                    <a href="#" class="btn btn-dark px-2">
+                    <a href="{{ address.instagram }}" class="btn btn-dark px-2 {% if not address.instagram %} disabled {% endif %}">
                         <i class="fa-brands fa-instagram fa-lg fa-fw"></i>
                     </a>
-                    <a href="#" class="btn btn-dark px-2">
+                    <a href="{{ address.telegram }}" class="btn btn-dark px-2 {% if not address.telegram %} disabled {% endif %}">
                         <i class="fa-solid fa-paper-plane fa-lg fa-fw"></i>
                     </a>
                 </div>
             </div>
         </div>
-{#    </div>#}
-{#    <div class="landing_col d-flex pt-0 ">#}
-{#        <div class="mt-auto flex-grow-1 w-100 d-xxl-none d-flex">#}
-{#            {% include "parts/footer/addr.html" %}#}
-{#        </div>#}
-{#        <div class="flex-column gap-2 mt-auto mx-3 d-xxl-none d-flex">#}
-{#            <img src="{% static "reua/img/visa_mastercard.png" %}" alt="logo"/>#}
-{#            <img src="{% static "reua/img/verified_ukraine_donation_list.png" %}" alt="logo"/>#}
-{#        </div>#}
-{#    </div>#}
 </div>

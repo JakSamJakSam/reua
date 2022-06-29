@@ -50,13 +50,13 @@
                 {% endfor %}
             </div>
             <div class="d-flex gap-2 justify-content-end ">
-                <a href="#" class="btn btn-light px-2">
+                <a href="{{ address.facebook }}" class="btn btn-light px-2 {% if not address.facebook %} disabled {% endif %}">
                     <i class="fa-brands fa-facebook-f fa-lg fa-fw"></i>
                 </a>
-                <a href="#" class="btn btn-light px-2">
+                <a href="{{ address.instagram }}" class="btn btn-light px-2 {% if not address.instagram %} disabled {% endif %}">
                     <i class="fa-brands fa-instagram fa-lg fa-fw"></i>
                 </a>
-                <a href="#" class="btn btn-light px-2">
+                <a href="{{ address.telegram }}" class="btn btn-light px-2 {% if not address.telegram %} disabled {% endif %}">
                     <i class="fa-solid fa-paper-plane fa-lg fa-fw"></i>
                 </a>
             </div>

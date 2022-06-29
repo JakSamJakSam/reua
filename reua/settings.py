@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -196,3 +197,5 @@ LOGGING = {
 }
 
 CSRF_TRUSTED_ORIGINS = ['https://reua.com.ua']
+
+PHONENUMBER_DEFAULT_REGION = 'UA'

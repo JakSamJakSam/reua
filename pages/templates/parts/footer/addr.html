@@ -2,11 +2,13 @@
 
 <div class="text-start mb-2">
     <address class="mb-0">
-        {% trans "м. Київ, провул. Повітрофлотський 3, кв.21" %}
+        {{ address.addr }}
     </address>
     <div>
-        {% trans "тел." %}<a href="tel://+380670772255" class="link-dark text-decoration-none">+38 067 077
-        22 55</a>
+        {% trans "тел." %}
+        <a href="{{ address.phone.as_rfc3966 }}" class="link-dark text-decoration-none">
+            {{ address.phone.as_international }}
+        </a>
     </div>
 </div>
 
