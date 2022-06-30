@@ -4,7 +4,7 @@
 
 {% get_project_info "rebuild" as proj_rebuild_info %}
 <div class="px-0 landing_block row" id="slide3">
-    <div class="col col-lg-6 bg-dark landing_col pb-0">
+    <div class="col col-12 col-lg-6 bg-dark landing_col pb-0">
         <div class="mx-auto text-left text-block text-white">
             <h2 class="text-uppercase fw-bold mb-4 text-warning">
                 {% trans "Відбудова житла" %}
@@ -28,7 +28,7 @@
             </p>
         </div>
     </div>
-    <div class="col col-lg-6 landing_col pb-0">
+    <div class="col col-12 col-lg-6 landing_col pb-0 d-lg-block d-none">
         <div class="mx-auto text-left text-block h-100 d-flex flex-column">
             <div class="text-white">
                 <p class="lead lh-base">
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="col col-lg-6 bg-dark landing_col pt-5">
+    <div class="col col-12 col-lg-6 bg-dark landing_col pt-5">
         <div class="mx-auto text-left text-block text-white">
             <h4 class="text-uppercase mt-5 text-warning">
                 {% trans "1 ЕТАП" %}
@@ -64,16 +64,19 @@
             </p>
             <img class="w-100" src="{% static "reua/img/temporary_house.png" %}"
                  alt="{% trans "Тимчасове модульне житло" %}"/>
-            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-5">
+            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
+               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none {% if proj_rebuild_info.disabled %} disabled {% endif %}">
+                {% trans "Зробити внесок" %}
+            </a>
+            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-4 mt-lg-5">
                 {% trans "Детальний проект" %}
                 <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
             </a>
         </div>
     </div>
-
 </div>
 <div class="px-0 landing_block row" id="slide3_1">
-    <div class="col col-lg-6 bg-dark landing_col ">
+    <div class="col col-12 col-lg-6 bg-dark landing_col ">
         <div class="mx-auto text-left text-block text-white">
             <h4 class="text-uppercase text-warning">
                 {% trans "2 ЕТАП" %}
@@ -101,21 +104,25 @@
                     використання наявної площі будівлі.
                 {% endblocktrans %}
             </p>
-            <img class="w-100 my-5" src="{% static "reua/img/permanent_house.png" %}"
+            <img class="w-100 mt-5" src="{% static "reua/img/permanent_house.png" %}"
                  alt="{% trans "Постійне житло з власною екосистемою" %}"/>
 
-            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 ">
+            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
+               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none {% if proj_rebuild_info.disabled %} disabled {% endif %}">
+                {% trans "Зробити внесок" %}
+            </a>
+            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-4 mt-lg-5 ">
                 {% trans "Детальний проект" %}
                 <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
             </a>
         </div>
     </div>
-    <div class="col col-lg-6 px-0 landing_col">
+    <div class="col col-12 col-lg-6 px-0 landing_col d-lg-block d-none">
 
     </div>
 </div>
 <div class="px-0 landing_block row" id="slide3_2">
-    <div class="col col-lg-6 bg-dark landing_col ">
+    <div class="col col-12 col-lg-6 bg-dark landing_col ">
         <div class="mx-auto text-left text-block text-white">
             <h4 class="text-uppercase text-warning">
                 {% trans "3 ЕТАП" %}
@@ -137,15 +144,19 @@
                     виробництвам: будівельних матеріалів, меблів, вікон тощо.
                 {% endblocktrans %}
             </p>
-            <img class="w-100 my-5" src="{% static "reua/img/industrial_park.png" %}"
+            <img class="w-100 mt-5" src="{% static "reua/img/industrial_park.png" %}"
                  alt="{% trans "Індустріальні парки" %}"/>
-            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 ">
+            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
+               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none {% if proj_rebuild_info.disabled %} disabled {% endif %}">
+                {% trans "Зробити внесок" %}
+            </a>
+            <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-4 mt-lg-5">
                 {% trans "Детальний проект" %}
                 <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
             </a>
         </div>
     </div>
-    <div class="col col-lg-6 px-0 landing_col">
+    <div class="col col-12 col-lg-6 px-0 landing_col d-lg-block d-none">
 
     </div>
 </div>

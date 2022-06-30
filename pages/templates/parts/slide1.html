@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load static %}
 
-<div class="text-center bg-dark text-white landing_row row video_overlay landing_block" id="slide1">
+<div class="text-center bg-dark text-white landing_row row video_overlay landing_block flex-column-reverse flex-lg-row" id="slide1">
     <div class="col col-lg-6 landing_col d-flex flex-column ">
         <div class="mx-auto text-left text-block flex-grow-1">
             <img class="d-block mb-5 w-100" src="{% static "reua/img/logo.png" %}" alt="">
@@ -17,14 +17,14 @@
                     Маріуполя:
                 {% endblocktrans %}
             </p>
-            <ul class="list list-unstyled d-flex flex-row gap-2 align-items-center ">
-                <li class="flex-fill w-50">
-                    <a href="#slide2" class="btn btn btn-outline-light p-3 w-100 text-uppercase">
+            <ul class="list list-unstyled d-flex flex-row gap-2 +align-items-center ">
+                <li class="flex-fill w-50 d-block">
+                    <a href="#slide2" class="btn btn btn-outline-light p-3 w-100 text-uppercase d-flex align-items-center justify-content-center h-100">
                         {% trans "Питна вода" %}
                     </a>
                 </li>
-                <li class="flex-fill w-50">
-                    <a href="#slide3" class="btn btn btn-outline-light p-3 w-100 text-uppercase">
+                <li class="flex-fill w-50 d-block">
+                    <a href="#slide3" class="btn btn btn-outline-light p-3 w-100 text-uppercase d-flex align-items-center justify-content-center h-100">
                         {% trans "Відбудова житла" %}
                     </a>
                 </li>
@@ -37,26 +37,26 @@
         </div>
     </div>
     <div class="col col-lg-6 landing_col">
-        <div class="mx-auto text-left h-100 d-flex flex-column justify-content-between text-block">
+        <div class="mx-auto text-left h-100 d-flex flex-lg-column flex-row-reverse justify-content-between text-block">
             <div class="d-flex gap-2 justify-content-end ">
                 {% get_available_languages as languages %}
                 {% for language in languages %}
                     {% get_language_info for language|first as lang_info %}
                     <a href="{% language lang_info.code %}{% url "index" %}{% endlanguage %}"
-                       class="btn lng lng-{{ lang_info.code }} text-uppercase"
+                       class="btn lng lng-{{ lang_info.code }} text-uppercase d-flex align-items-center"
                        title="{{ lang_info.name_local }}">
                         {{ language|last }}
                     </a>
                 {% endfor %}
             </div>
             <div class="d-flex gap-2 justify-content-end ">
-                <a href="{{ address.facebook }}" class="btn btn-light px-2 {% if not address.facebook %} disabled {% endif %}">
+                <a href="{{ address.facebook }}" class="btn btn-sm btn-light px-1 px-lg-2 {% if not address.facebook %} disabled {% endif %}" target="_blank">
                     <i class="fa-brands fa-facebook-f fa-lg fa-fw"></i>
                 </a>
-                <a href="{{ address.instagram }}" class="btn btn-light px-2 {% if not address.instagram %} disabled {% endif %}">
+                <a href="{{ address.instagram }}" class="btn btn-sm btn-light px-1 px-lg-2 {% if not address.instagram %} disabled {% endif %}"  target="_blank">
                     <i class="fa-brands fa-instagram fa-lg fa-fw"></i>
                 </a>
-                <a href="{{ address.telegram }}" class="btn btn-light px-2 {% if not address.telegram %} disabled {% endif %}">
+                <a href="{{ address.telegram }}" class="btn btn-sm btn-light px-1 px-lg-2 {% if not address.telegram %} disabled {% endif %}" target="_blank">
                     <i class="fa-solid fa-paper-plane fa-lg fa-fw"></i>
                 </a>
             </div>

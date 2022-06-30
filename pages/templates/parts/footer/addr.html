@@ -1,10 +1,10 @@
 {% load i18n %}
 
-<div class="text-start mb-2">
+<div class="text-center text-lg-start mb-4 ">
     <address class="mb-0">
         {{ address.addr }}
     </address>
-    <div>
+    <div class="fw-bold">
         {% trans "тел." %}
         <a href="{{ address.phone.as_rfc3966 }}" class="link-dark text-decoration-none">
             {{ address.phone.as_international }}
@@ -12,22 +12,35 @@
     </div>
 </div>
 
-<ul class="list-unstyled row mb-0">
+<ul class="list-unstyled row " style="margin-bottom: -.5rem">
     {% for cd in consituents_docs %}
-        <li class="d-block col-xxl-6 col-12">
-            <a href="{{ cd.file.url }}" class="link-dark text-decoration-none" download="{{ cd.file.name }}">
-                <div class="card d-flex flex-row bg-transparent border-0 mt-2">
-                    <div class="px-1 py-0 d-flex align-items-end justify-content-center">
-                        {% if cd.type == "pdf" %}
+        <li class="d-flex col-xxl-6 col-lg-12 col-6 mb-2 " style="height: 2rem">
+                {% if not a %}
+                    <div>
+                    {% if cd.type == "pdf" %}
                             <i class="fa-solid fa-file-pdf fa-2x"></i>
                         {% else %}
                             <i class="fa-solid fa-file-circle-question"></i>
                         {% endif %}
                     </div>
-                    <div class="card-body flex-grow-1 px-1 py-0 text-start align-items-center d-flex">
-                        {{ cd.title }}
+                    <div class="flex-grow-1 px-1 text-start d-flex align-items-center " >
+                    {{ cd.title }}
                     </div>
-                </div>
+                {% else %}
+                    <div class="card d-flex flex-row bg-transparent border-0 mt-2 "
+                         style="max-height: calc(1em + .5rem)">
+                        <div class="px-1 py-0 d-flex align-items-end justify-content-center">
+                            {% if cd.type == "pdf" %}
+                                <i class="fa-solid fa-file-pdf fa-2x"></i>
+                            {% else %}
+                                <i class="fa-solid fa-file-circle-question"></i>
+                            {% endif %}
+                        </div>
+                        <div class="card-body flex-grow-1 px-1 py-0 text-start align-items-center d-flex">
+                            {{ cd.title }}
+                        </div>
+                    </div>
+                {% endif %}
             </a>
         </li>
     {% endfor %}

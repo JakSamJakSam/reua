@@ -8,7 +8,7 @@
         width: 140%;
     }
     .landing_col{
-        padding: 80px 40px;
+        padding: 4rem 2rem;
     }
 }
 
@@ -16,4 +16,31 @@
     .fullscreen-bg__video>video{
         width: 170%;
     }
+}
+
+@media (max-width: 991px) {
+    html{
+        font-size: 14px;
+    }
+    .fullscreen-bg__video>video{
+        display: none;
+    }
+    /*.landing_row > .landing_col:not(:first-child){*/
+    /*    padding: 40px 40px;*/
+    /*}*/
+
+    .landing_col{
+        padding: 2rem;
+    }
+    .footer-logo{
+        height: calc(100vw * 189 / 575 - var(--bs-gutter-x));
+        margin-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: calc(var(--bs-gutter-x) * 0.5);
+        width: -moz-available;
+        width: -webkit-fill-available;
+    }
+    .offcanvas-payment {
+        width: 100%;
+    }
+
 }

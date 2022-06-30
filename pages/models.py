@@ -73,7 +73,7 @@ class Addresses(models.Model):
     phone = PhoneNumberField(verbose_name=_('Телефон'), blank=True, null=True, default=None)
     facebook = models.URLField(verbose_name='Facebook', blank=True, null=True, default=None)
     instagram = models.URLField(verbose_name='Instagram', blank=True, null=True, default=None)
-    talagram = models.URLField(verbose_name='Telegram', blank=True, null=True, default=None)
+    telegram = models.URLField(verbose_name='Telegram', blank=True, null=True, default=None)
     email = models.EmailField(verbose_name='Email', blank=True, null=True, default=None)
 
     def __str__(self):
