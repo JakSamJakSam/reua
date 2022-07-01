@@ -1,8 +1,6 @@
 {% load i18n %}
 {% load static %}
-{% load project_tags %}
 
-{% get_project_info "water" as proj_water_info %}
 <div class="px-0 landing_block row" id="slide2">
     <div class="col col-12 col-lg-6 bg-warning landing_col d-none d-lg-block">
         <div class="mx-auto text-left text-block">
@@ -17,8 +15,8 @@
                 {% endblocktrans %}
 
             </p>
-            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
-               class="btn btn-dark p-3 w-100 text-uppercase fw-500 mt-5  {% if proj_water_info.disabled %} disabled {% endif %}">
+            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" data-project="water"
+               class="btn btn-dark p-3 w-100 text-uppercase fw-500 mt-5">
                 {% trans "Зробити внесок" %}
             </a>
         </div>
@@ -58,8 +56,8 @@
                         забрудненості.
                     {% endblocktrans %}
                 </p>
-                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
-                   class="btn btn-dark p-3 w-100 text-uppercase fw-500 mt-5 text-warning  d-block d-lg-none {% if proj_water_info.disabled %} disabled {% endif %}">
+                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" data-project="water"
+                   class="btn btn-dark p-3 w-100 text-uppercase fw-500 mt-5 text-warning  d-block d-lg-none ">
                     {% trans "Зробити внесок" %}
                 </a>
 

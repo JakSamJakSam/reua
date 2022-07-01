@@ -11,8 +11,19 @@ from django.utils.translation import gettext_lazy as _, get_language
 from liqpay import LiqPay
 
 from pages.forms import PaymentForm
-from pages.models import Project, ConsituentsDocs, Addresses
+from pages.models import Project, ConsituentsDocs, Addresses, BankTransferInfo
 
+
+def get_projects_data():
+    projects = [{
+        'identity': p.identity,
+        'title': p.title,
+        'disabled': p.disabled,
+        'cryptoURL': p.cryptoURL,
+        'cardURL': p.cardURL,
+        'bank_accounts': p.transfers.exists(),
+    } for p in Project.objects.all()]  # TODO Cashe it
+    return projects
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -20,9 +31,10 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         ctx = super(IndexView, self).get_context_data(**kwargs)
         current_site = get_current_site(self.request)
-        ctx['projects'] = Project.objects.all() #TODO Cashe it
-        ctx['consituents_docs'] = ConsituentsDocs.objects.all() #TODO Cashe it
-        ctx['address'], created = Addresses.objects.get_or_create(site_id=current_site.id)
+        ctx['consituents_docs'] = ConsituentsDocs.objects.all()  # TODO Cashe it
+        ctx['projects'] = get_projects_data()
+        ctx['address'], created = Addresses.objects.get_or_create(site_id=current_site.id)  # TODO Cashe it
+        ctx['transfers'] = BankTransferInfo.objects.all()  # TODO Cashe it
         return ctx
 
 
@@ -36,7 +48,6 @@ class PaymentStart(FormView):
             'currency': 'USD'
         }
 
-
     def form_valid(self, form):
         order_id = str(uuid.uuid4())
         cache.set(f'order_{order_id}', form.cleaned_data)
@@ -46,6 +57,7 @@ class PaymentStart(FormView):
 
 class PaymentFinish(TemplateView):
     template_name = "payment\make_payment.html"
+
     def get(self, request, *args, **kwargs):
         order_id = kwargs.get('order_id', None)
         if order_id is None:
@@ -58,29 +70,29 @@ class PaymentFinish(TemplateView):
             # TODO: Payment error
             return HttpResponseRedirect(reverse('index'))
 
-        form_data['order_id']=order_id
+        form_data['order_id'] = order_id
         context = self.get_context_data(form_data=form_data)
         return self.render_to_response(context)
 
     def get_context_data(self, form_data=None):
-        ctx=super().get_context_data(form_data=form_data)
+        ctx = super().get_context_data(form_data=form_data)
         liqpay = LiqPay(settings.LIQPAY_PUBLIC_KEY, settings.LIQPAY_PRIVATE_KEY)
         current_site = get_current_site(self.request)
         domain = current_site.domain
         protocol = 'https' if self.request.is_secure() else 'http'
-        langauge = get_language()#$request=self.request)
+        langauge = get_language()  # $request=self.request)
         params = {
-                'action': 'pay',
-                'amount': float(form_data['amount']),
-                'currency': form_data['currency'],
-                'description': 'Donation for ',#TODO: определить назначение платежа
-                'order_id': str(form_data['order_id']),
-                'version': '3',
-                'sandbox': settings.LIQPAY_SANDOX_MODE, # sandbox mode, set to 1 to enable it
-                'result_url': 'https://google.com/',
-                'language': langauge,
-                # 'server_url': f'{protocol}://{domain}{reverse("liqpay-callback", kwargs={"pk": order.pk})}',  # url to callback view
-            }
+            'action': 'pay',
+            'amount': float(form_data['amount']),
+            'currency': form_data['currency'],
+            'description': 'Donation for ',  # TODO: определить назначение платежа
+            'order_id': str(form_data['order_id']),
+            'version': '3',
+            'sandbox': settings.LIQPAY_SANDOX_MODE,  # sandbox mode, set to 1 to enable it
+            'result_url': 'https://google.com/',
+            'language': langauge,
+            # 'server_url': f'{protocol}://{domain}{reverse("liqpay-callback", kwargs={"pk": order.pk})}',  # url to callback view
+        }
         signature = liqpay.cnb_signature(params)
         data = liqpay.cnb_data(params)
 
@@ -89,4 +101,3 @@ class PaymentFinish(TemplateView):
         ctx['signature'] = signature
         ctx['data'] = data
         return ctx
-

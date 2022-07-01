@@ -9,6 +9,8 @@ class Project(models.Model):
     name = models.CharField(max_length=100, verbose_name=_('Найменування'))
     name_en = models.CharField(max_length=100, verbose_name=_('Найменування (англ.)'), blank=True, default='')
     disabled = models.BooleanField(verbose_name=_('Відключено'), blank=True, default=False)
+    cryptoURL = models.URLField(verbose_name=_("Адреса платіжної системи для 'crypto'"), blank=True, null=True, default=None)
+    cardURL = models.URLField(verbose_name=_("Адреса платіжної системи для 'credit-card'"), blank=True, null=True, default=None)
 
     @property
     def title(self):
@@ -27,6 +29,7 @@ class Project(models.Model):
 
 class BankTransferInfo(models.Model):
     project = models.ForeignKey(Project, on_delete=models.PROTECT, verbose_name=_("Проект"), related_name='transfers')
+    name = models.CharField(max_length=60, verbose_name=_("Найменування"))
     bank = models.CharField(max_length=100, verbose_name=_("Банк"))
     mfo = models.CharField(max_length=6, verbose_name=_("МФО"))
     account = models.CharField(max_length=29, verbose_name=_("Рахунок"))

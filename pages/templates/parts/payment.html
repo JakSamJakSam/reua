@@ -14,11 +14,14 @@
         <h3 class="fw-normal ">{% trans "Оберіть категорію внеску" %}</h3>
         <ul class="list-unstyled d-flex flex-column gap-4">
             {% for proj in projects %}
-            <li>
-                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3 {% if proj.disabled %} disabled {% endif %}">
-                    {{ proj.title }}
-                </a>
-            </li>
+                <li>
+                    <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
+                       class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3 {% if proj.disabled %} disabled {% endif %}"
+                       data-project="{{ proj.identity }}"
+                    >
+                        {{ proj.title }}
+                    </a>
+                </li>
             {% endfor %}
         </ul>
     </div>
@@ -29,10 +32,10 @@
         <a href="#payment-select-project" data-bs-toggle="offcanvas" class="btn btn-dark ms-auto">
             <i class="fa-solid fa-arrow-left fa-2x"></i>
         </a>
-{#        <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="offcanvas"#}
-{#                aria-label="Close">#}
-{#            <i class="fa-solid fa-xmark fa-2x"></i>#}
-{#        </button>#}
+        {#        <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="offcanvas"#}
+        {#                aria-label="Close">#}
+        {#            <i class="fa-solid fa-xmark fa-2x"></i>#}
+        {#        </button>#}
     </div>
     <div class="offcanvas-header text-block mx-auto ">
         <img src="{% static "reua/img/logo.png" %}" alt="reUA logo" class="w-100"/>
@@ -41,25 +44,82 @@
         <h3 class="fw-normal text-white">{% trans "Оберіть категорію внеску" %}</h3>
         <ul class="list-unstyled d-flex flex-column gap-4">
             <li>
-                <a href="https://reua.pay.whitepay.com/?fiat=true" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3">
+                <a href="https://reua.pay.whitepay.com/?fiat=true"
+                   class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3"
+                   data-payment_type="credit_card"
+                >
                     {% trans "Кредитна карта" %}
                 </a>
             </li>
             <li>
-                <a href="#" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3">
+                <a href="#bank_acc_payment" data-bs-toggle="offcanvas"
+                   class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3"
+                   data-payment_type="bank_account"
+                >
                     {% trans "Банківський переказ" %}
                 </a>
             </li>
             <li>
-                <a href="#" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3">
+                <a href="#" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3"
+                   data-payment_type="paypal"
+                >
                     PayPal
                 </a>
             </li>
             <li>
-                <a href="https://reua.pay.whitepay.com/" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3">
+                <a href="https://reua.pay.whitepay.com/"
+                   class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3"
+                   data-payment_type="crypto"
+                >
                     {% trans "Криптовалюта" %}
                 </a>
             </li>
         </ul>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-start bg-dark offcanvas-payment" tabindex="-1" id="bank_acc_payment">
+    <div class="d-flex mx-2">
+        <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" class="btn btn-dark ms-auto">
+            <i class="fa-solid fa-arrow-left fa-2x"></i>
+        </a>
+    </div>
+    <div class="offcanvas-header text-block mx-auto ">
+        <img src="{% static "reua/img/logo.png" %}" alt="reUA logo" class="w-100"/>
+    </div>
+    <div class="offcanvas-body mt-5 text-block mx-auto">
+        <h3 class="fw-normal text-white">{% trans "Оберіть зручний метод сплати" %}</h3>
+        <div class="accordion" id="bank_acc_payment_accordion">
+            {% for t in transfers %}
+                <div class="accordion-item" data-project="{{ t.project.identity }}">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#transfer-{{ t.id }}"
+                                aria-expanded="false"
+                                aria-controls="transfer-{{ t.id }}">
+                            {{ t.name }}
+                        </button>
+                    </h2>
+                    <div id="transfer-{{ t.id }}" class="accordion-collapse collapse"
+                         data-bs-parent="#bank_acc_payment_accordion">
+                        <div class="accordion-body">
+                            <dl>
+                                <dt>{% trans "Банк" %}</dt>
+                                <dd>{{ t.bank }}</dd>
+                                <dt>{% trans "МФО" %}</dt>
+                                <dd>{{ t.mfo }}</dd>
+                                <dt>{% trans "Рахунок №" %}</dt>
+                                <dd>{{ t.account }}</dd>
+                                <dt>{% trans "Код єдрпоу" %}</dt>
+                                <dd>{{ t.edrpou }}</dd>
+                                <dt>{% trans "Отримувач" %}</dt>
+                                <dd>{{ t.payee }}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </div>

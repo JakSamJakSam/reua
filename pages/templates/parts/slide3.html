@@ -1,8 +1,5 @@
 {% load i18n %}
 {% load static %}
-{% load project_tags %}
-
-{% get_project_info "rebuild" as proj_rebuild_info %}
 <div class="px-0 landing_block row" id="slide3">
     <div class="col col-12 col-lg-6 bg-dark landing_col pb-0">
         <div class="mx-auto text-left text-block text-white">
@@ -39,8 +36,8 @@
                 </p>
             </div>
             <div class="mt-auto mb-3">
-                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
-                   class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 {% if proj_rebuild_info.disabled %} disabled {% endif %}">
+                <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" data-project="rebuild"
+                   class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 ">
                     {% trans "Зробити внесок" %}
                 </a>
             </div>
@@ -64,8 +61,8 @@
             </p>
             <img class="w-100" src="{% static "reua/img/temporary_house.png" %}"
                  alt="{% trans "Тимчасове модульне житло" %}"/>
-            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
-               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none {% if proj_rebuild_info.disabled %} disabled {% endif %}">
+            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" data-project="rebuild"
+               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none ">
                 {% trans "Зробити внесок" %}
             </a>
             <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-4 mt-lg-5">
@@ -107,8 +104,8 @@
             <img class="w-100 mt-5" src="{% static "reua/img/permanent_house.png" %}"
                  alt="{% trans "Постійне житло з власною екосистемою" %}"/>
 
-            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
-               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none {% if proj_rebuild_info.disabled %} disabled {% endif %}">
+            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" data-project="rebuild"
+               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none ">
                 {% trans "Зробити внесок" %}
             </a>
             <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-4 mt-lg-5 ">
@@ -146,8 +143,8 @@
             </p>
             <img class="w-100 mt-5" src="{% static "reua/img/industrial_park.png" %}"
                  alt="{% trans "Індустріальні парки" %}"/>
-            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
-               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none {% if proj_rebuild_info.disabled %} disabled {% endif %}">
+            <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" data-project="rebuild"
+               class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-5 d-block d-lg-none ">
                 {% trans "Зробити внесок" %}
             </a>
             <a href="#" class="btn btn-outline-light p-3 w-100 text-uppercase fw-500 mt-4 mt-lg-5">

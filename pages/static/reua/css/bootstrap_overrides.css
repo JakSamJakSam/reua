@@ -32,6 +32,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: .7em;
 }
 
+.accordion-button:not(.collapsed) {
+    color: inherit;
+    background-color: inherit;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
+
 :root{
     --bs-body-font-family: 'PT Sans', sans-serif;
     --bs-header-font-family: 'Rubik', sans-serif;
