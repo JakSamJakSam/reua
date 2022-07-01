@@ -92,6 +92,6 @@ html{
 }
 
 .footer-logo{
-    background: url("../img/footer_logo.png") no-repeat bottom center;
+    background: url("../img/footer_logo.png") no-repeat top center;
     background-size: contain;
 }
