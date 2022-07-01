@@ -14,33 +14,20 @@
 
 <ul class="list-unstyled row" style="margin-bottom: -.5rem">
     {% for cd in consituents_docs %}
-        <li class="d-flex col-xxl-6 col-lg-12 col-6 mb-2 overflow-hidden" style="height: 2rem">
-                {% if not a %}
-                    <div>
+        <li class="col-xxl-6 col-lg-12 col-6 mb-2 ">
+            <a href="{{ cd.file.url }}"
+               class="d-flex overflow-hidden text-body text-decoration-none"
+               style="height: 2rem" download="{{ cd.file.name }}">
+                <div>
                     {% if cd.type == "pdf" %}
-                            <i class="fa-solid fa-file-pdf fa-2x"></i>
-                        {% else %}
-                            <i class="fa-solid fa-file-circle-question"></i>
-                        {% endif %}
-                    </div>
-                    <div class="flex-grow-1 px-1 text-start d-flex align-items-center " >
+                        <i class="fa-solid fa-file-pdf fa-2x"></i>
+                    {% else %}
+                        <i class="fa-solid fa-file-circle-question"></i>
+                    {% endif %}
+                </div>
+                <div class="flex-grow-1 px-1 text-start d-flex align-items-center ">
                     {{ cd.title }}
-                    </div>
-                {% else %}
-                    <div class="card d-flex flex-row bg-transparent border-0 mt-2 "
-                         style="max-height: calc(1em + .5rem)">
-                        <div class="px-1 py-0 d-flex align-items-end justify-content-center">
-                            {% if cd.type == "pdf" %}
-                                <i class="fa-solid fa-file-pdf fa-2x"></i>
-                            {% else %}
-                                <i class="fa-solid fa-file-circle-question"></i>
-                            {% endif %}
-                        </div>
-                        <div class="card-body flex-grow-1 px-1 py-0 text-start align-items-center d-flex">
-                            {{ cd.title }}
-                        </div>
-                    </div>
-                {% endif %}
+                </div>
             </a>
         </li>
     {% endfor %}
