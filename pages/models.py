@@ -30,12 +30,16 @@ class Project(models.Model):
 class BankTransferInfo(models.Model):
     project = models.ForeignKey(Project, on_delete=models.PROTECT, verbose_name=_("Проект"), related_name='transfers')
     name = models.CharField(max_length=60, verbose_name=_("Найменування"))
-    bank = models.CharField(max_length=100, verbose_name=_("Банк"))
-    mfo = models.CharField(max_length=6, verbose_name=_("МФО"))
+    bank = models.CharField(max_length=100, verbose_name=_("Банк"), blank=True, null=True, default=None)
+    mfo = models.CharField(max_length=6, verbose_name=_("МФО"), blank=True, null=True, default=None)
     account = models.CharField(max_length=29, verbose_name=_("Рахунок"))
-    edrpou = models.CharField(max_length=10, verbose_name=_("Код за ЄДРПОУ"))
+    edrpou = models.CharField(max_length=10, verbose_name=_("Код за ЄДРПОУ"), blank=True, null=True, default=None)
     payee = models.CharField(max_length=100, verbose_name=_("Отримувач"))
     purpose = models.TextField(verbose_name=_("Призначення платежу"))
+    bic = models.CharField(max_length=100, verbose_name="Beneficiary bic", blank=True, null=True, default=None)
+    beneficiary_address= models.TextField(verbose_name="Beneficiary address", blank=True, null=True, default=None)
+    correspondent_bank_name= models.CharField(max_length=100, verbose_name="Correspondent bank name", blank=True, null=True, default=None)
+    correspondent_bank_bic= models.CharField(max_length=8, verbose_name="Correspondent bank bic", blank=True, null=True, default=None)
 
     def __str__(self):
         return f'{self.name} ({self.project})'

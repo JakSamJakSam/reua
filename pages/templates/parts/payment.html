@@ -105,18 +105,46 @@
                          data-bs-parent="#bank_acc_payment_accordion">
                         <div class="accordion-body">
                             <dl>
+                                {% if t.bank %}
                                 <dt>{% trans "Банк" %}</dt>
                                 <dd>{{ t.bank }}</dd>
+                                {% endif %}
+                                {% if t.mfo %}
                                 <dt>{% trans "МФО" %}</dt>
                                 <dd>{{ t.mfo }}</dd>
+                                {% endif %}
+                                {% if t.account %}
                                 <dt>{% trans "Рахунок №" %}</dt>
                                 <dd>{{ t.account }}</dd>
+                                {% endif %}
+                                {% if t.edrpou %}
                                 <dt>{% trans "Код єдрпоу" %}</dt>
                                 <dd>{{ t.edrpou }}</dd>
+                                {% endif %}
+                                {% if t.payee %}
                                 <dt>{% trans "Отримувач" %}</dt>
                                 <dd>{{ t.payee }}</dd>
+                                {% endif %}
+                                {% if t.bic %}
+                                <dt>Beneficiary bic</dt>
+                                <dd>{{ t.bic }}</dd>
+                                {% endif %}
+                                {% if t.beneficiary_address %}
+                                <dt>Beneficiary address</dt>
+                                <dd>{{ t.beneficiary_address }}</dd>
+                                {% endif %}
+                                {% if t.correspondent_bank_name %}
+                                <dt>Correspondent bank name</dt>
+                                <dd>{{ t.correspondent_bank_name }}</dd>
+                                {% endif %}
+                                {% if t.correspondent_bank_bic %}
+                                <dt>Correspondent bank bic</dt>
+                                <dd>{{ t.correspondent_bank_bic }}</dd>
+                                {% endif %}
+                                {% if t.purpose %}
                                 <dt>{% trans "Призначення платежу" %}</dt>
                                 <dd>{{ t.purpose }}</dd>
+                                {% endif %}
                             </dl>
                         </div>
                     </div>
