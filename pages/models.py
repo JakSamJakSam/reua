@@ -38,7 +38,7 @@ class BankTransferInfo(models.Model):
     purpose = models.TextField(verbose_name=_("Призначення платежу"))
 
     def __str__(self):
-        return f'{self.payee} ({self.project})'
+        return f'{self.name} ({self.project})'
 
     class Meta:
         verbose_name = _("Реквізит банківського переводу")
