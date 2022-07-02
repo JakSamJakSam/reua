@@ -2,19 +2,19 @@
 {% load static %}
 
 <div class="text-center footer text-body landing_col row d-lg-flex d-none">
-    <div class="col-xl-4  mb-lg-0 mb-4 px-5">
+    <div class="col-xl-4 col-lg-4 mb-lg-0 mb-4 px-5">
         <div class="footer-logo w-100 h-100"></div>
     </div>
-    <div class="col-xxl-5 col-xl-4" style="margin-top: -10px">
+    <div class="col-xxl-5 col-xl-4 col-lg-4" style="margin-top: -10px">
         {% include "parts/footer/addr.html" %}
     </div>
-    <div class="d-flex flex-row col-xxl-3 col-xl-4 px-5" style="margin-top: -10px">
-        <div class="ms-auto flex-column gap-2 _mt-auto mx-3 d-xl-flex d-none justify-content-between">
+    <div class="d-flex flex-row col-xxl-3 col-xl-4 col-lg-4 px-5" style="margin-top: -10px">
+        <div class="ms-auto flex-column gap-2 _mt-auto mx-3 d-lg-flex d-none justify-content-xxl-between justify-content-start">
             <img src="{% static "reua/img/visa.png" %}" alt="vise"/>
             <img src="{% static "reua/img/mastercard.png" %}" alt="mastercard"/>
             <img src="{% static "reua/img/verified_ukraine_donation_list.png" %}" alt="verified ukraine donation list"/>
         </div>
-        <div class="_mt-auto d-flex flex-column justify-content-between" style="width: 167px">
+        <div class="_mt-auto d-flex flex-column justify-content-xxl-between justify-content-start" style="width: 167px">
             {% include "parts/footer/contacts.html" %}
         </div>
     </div>

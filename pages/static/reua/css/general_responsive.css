@@ -16,6 +16,11 @@
     .fullscreen-bg__video>video{
         width: 170%;
     }
+    /*.footer-logo {*/
+    /*    margin-left: auto;*/
+    /*    margin-right: auto;*/
+    /*    height: calc(50vw * 189 / 575 - var(--bs-gutter-x));*/
+    /*}*/
 }
 
 @media (max-width: 991px) {

@@ -73,7 +73,6 @@
   paymentBankOffcanvas.addEventListener('show.bs.offcanvas', function (){
     paymentBankOffcanvas.querySelectorAll('[data-project]:not(.d-none)').forEach(
       (accItem, idx) => {
-        console.log(111);
         const b = accItem.querySelector('.accordion-button')
         const c = accItem.querySelector('.accordion-collapse')
         if (idx === 0) {
