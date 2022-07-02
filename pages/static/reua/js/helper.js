@@ -11,9 +11,6 @@
 
   function addClass(node, className) {
     if (!node.className.split(' ').includes(className)) node.className += ` ${className} `;
-    console.log(!node.className.split(' ').includes(className))
-    console.log(node);
-    console.log(className);
   }
 
   function removeClass(node, className) {
@@ -61,8 +58,22 @@
         }
       }
     );
+  }
+
+  const buttons = [...document.querySelectorAll('[data-project]')].filter(item => item.dataset.project in projectsData);
+  buttons.forEach(item => {
+    const proj = item.dataset.project;
+    if (projectsData[proj].disabled) {
+      item.className += ' disabled ';
+    } else {
+      item.addEventListener('click', onPaymentClick);
+    }
+  })
+
+  paymentBankOffcanvas.addEventListener('show.bs.offcanvas', function (){
     paymentBankOffcanvas.querySelectorAll('[data-project]:not(.d-none)').forEach(
       (accItem, idx) => {
+        console.log(111);
         const b = accItem.querySelector('.accordion-button')
         const c = accItem.querySelector('.accordion-collapse')
         if (idx === 0) {
@@ -76,16 +87,6 @@
         }
       }
     )
-  }
-
-  const buttons = [...document.querySelectorAll('[data-project]')].filter(item => item.dataset.project in projectsData);
-  buttons.forEach(item => {
-    const proj = item.dataset.project;
-    if (projectsData[proj].disabled) {
-      item.className += ' disabled ';
-    } else {
-      item.addEventListener('click', onPaymentClick);
-    }
   })
 
   return {
