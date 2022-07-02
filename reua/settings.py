@@ -124,6 +124,7 @@ LANGUAGES = [
 
 
 LANGUAGE_CODE = 'uk'
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
@@ -199,3 +200,5 @@ LOGGING = {
 CSRF_TRUSTED_ORIGINS = ['https://reua.com.ua']
 
 PHONENUMBER_DEFAULT_REGION = 'UA'
+
+# LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
