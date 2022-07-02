@@ -88,7 +88,7 @@
         <img src="{% static "reua/img/logo.png" %}" alt="reUA logo" class="w-100"/>
     </div>
     <div class="offcanvas-body mt-5 text-block mx-auto">
-        <h3 class="fw-normal text-white">{% trans "Оберіть зручний метод сплати" %}</h3>
+        <h3 class="fw-normal text-white">{% trans "Оберіть зручний метод оплати" %}</h3>
         <div class="accordion" id="bank_acc_payment_accordion">
             {% for t in transfers %}
                 <div class="accordion-item" data-project="{{ t.project.identity }}">

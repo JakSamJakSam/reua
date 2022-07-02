@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-22 16:10+0300\n"
+"POT-Creation-Date: 2022-07-02 08:22+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,44 +18,476 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: .\pages\forms.py:7
+msgid "Валюта платежу"
+msgstr ""
+
+#: .\pages\forms.py:9
+msgid "Сума пожертви"
+msgstr ""
+
+#: .\pages\models.py:8
+msgid "Ідентифікатор"
+msgstr "Identity"
+
+#: .\pages\models.py:9 .\pages\models.py:32 .\pages\models.py:54
+msgid "Найменування"
+msgstr "Name"
+
+#: .\pages\models.py:10 .\pages\models.py:55
+msgid "Найменування (англ.)"
+msgstr "Name (en)"
+
+#: .\pages\models.py:11
+msgid "Відключено"
+msgstr "Disabled"
+
+#: .\pages\models.py:12
+msgid "Адреса платіжної системи для 'crypto'"
+msgstr "URL for crypto"
+
+#: .\pages\models.py:13
+msgid "Адреса платіжної системи для 'credit-card'"
+msgstr "URL for credit-card"
+
+#: .\pages\models.py:25 .\pages\models.py:31
+msgid "Проект"
+msgstr "Project"
+
+#: .\pages\models.py:26
+msgid "Проекти"
+msgstr "Projects"
+
+#: .\pages\models.py:33 .\pages\templates\parts\payment.html:109
+msgid "Банк"
+msgstr "Bank"
+
+#: .\pages\models.py:34 .\pages\templates\parts\payment.html:113
+msgid "МФО"
+msgstr "MFO"
+
+#: .\pages\models.py:35
+msgid "Рахунок"
+msgstr "Account number"
+
+#: .\pages\models.py:36
+msgid "Код за ЄДРПОУ"
+msgstr "EDRPOU code"
+
+#: .\pages\models.py:37 .\pages\templates\parts\payment.html:125
+msgid "Отримувач"
+msgstr "Beneficiary"
+
+#: .\pages\models.py:38 .\pages\templates\parts\payment.html:145
+msgid "Призначення платежу"
+msgstr "Purpose"
+
+#: .\pages\models.py:48
+msgid "Реквізит банківського переводу"
+msgstr "Bank transfer details"
+
+#: .\pages\models.py:49
+msgid "Реквізити банківського переводу"
+msgstr "Bank transfer details"
+
+#: .\pages\models.py:56
+msgid "Файл"
+msgstr "File"
+
+#: .\pages\models.py:59
+msgid "Тип файлу"
+msgstr "File type"
+
+#: .\pages\models.py:73
+msgid "Установчий документ"
+msgstr "Founding document"
+
+#: .\pages\models.py:74
+msgid "Установчи документи"
+msgstr "Founding documents"
+
+#: .\pages\models.py:79
+msgid "Сайт"
+msgstr "Site"
+
+#: .\pages\models.py:80
+msgid "Адреса"
+msgstr "Address"
+
+#: .\pages\models.py:81
+msgid "Телефон"
+msgstr "Phone number"
+
+#: .\pages\models.py:91
+msgid "Адреса компанії"
+msgstr "Address of company"
+
+#: .\pages\models.py:92
+msgid "Адреси компанії"
+msgstr "Address of companies"
+
 #: .\pages\templates\index.html:5
 msgid "Головна сторінка"
-msgstr ""
+msgstr "Home"
 
-#: .\pages\templates\index.html:14
+#: .\pages\templates\parts\footer\addr.html:8
+msgid "тел."
+msgstr "phone"
+
+#: .\pages\templates\parts\footer\contacts.html:4
+#: .\pages\templates\parts\footer\contacts.html:7
+msgid "Зв’язатись з нами та підписатися на нас можна:"
+msgstr "Contact and follow us:"
+
+#: .\pages\templates\parts\payment.html:14
+#: .\pages\templates\parts\payment.html:44
+msgid "Оберіть категорію внеску"
+msgstr "Choose a payment category"
+
+#: .\pages\templates\parts\payment.html:51
+msgid "Кредитна карта"
+msgstr "Credit card"
+
+#: .\pages\templates\parts\payment.html:59
+msgid "Банківський переказ"
+msgstr "Bank Transfer"
+
+#: .\pages\templates\parts\payment.html:74
+msgid "Криптовалюта"
+msgstr "Crypto"
+
+#: .\pages\templates\parts\payment.html:91
+msgid "Оберіть зручний метод оплати"
+msgstr "Choose a convenient payment method"
+
+#: .\pages\templates\parts\payment.html:117
+msgid "Рахунок №"
+msgstr "Account number"
+
+#: .\pages\templates\parts\payment.html:121
+msgid "Код єдрпоу"
+msgstr "EDRPOU code"
+
+#: .\pages\templates\parts\slide1.html:9
 msgid ""
 "\n"
-"                        Офіційна фандрейзингова платформа Фонду «Відбудуємо "
-"нашу Україну» за підтримки\n"
-"                    "
+"                    Офіційна фандрейзингова платформа Фонду «Відбудуємо нашу "
+"Україну» за підтримки\n"
+"                "
 msgstr ""
+"\n"
+"                    Official fundraising platform of the «Rebuild Our Ukraine» Foundation "
+"with support \n"
+"                "
 
-#: .\pages\templates\index.html:19
+#: .\pages\templates\parts\slide1.html:14
 msgid ""
 "\n"
-"                        Платформа працює на збір коштів для вирішення "
-"першочергових гуманітарних задач жителів Маріуполя\n"
-"                        за\n"
-"                        такими двома напрямками:\n"
-"                    "
+"                    Платформа працює на збір коштів для вирішення двох "
+"першочергових гуманітарних задач\n"
+"                    жителів\n"
+"                    Маріуполя:\n"
+"                "
 msgstr ""
+"\n"
+"                    The platform exists with the aim to raise funds to address "
+" two priority humanitarian issues of Mariupol residents:"
+"                "
 
-#: .\pages\templates\index.html:28
-msgid "Доступ до питної води"
-msgstr "Water"
 
-#: .\pages\templates\index.html:33
+#: .\pages\templates\parts\slide1.html:23
+msgid "Питна вода"
+msgstr "Drinking water"
+
+#: .\pages\templates\parts\slide1.html:28 .\pages\templates\parts\slide3.html:7
 msgid "Відбудова житла"
-msgstr "Rebuild"
+msgstr "Re-housing"
 
-#: .\pages\templates\index.html:38
+#: .\pages\templates\parts\slide1.html:35
+#: .\pages\templates\parts\slide2.html:20
+#: .\pages\templates\parts\slide2.html:61
+#: .\pages\templates\parts\slide3.html:41
+#: .\pages\templates\parts\slide3.html:66
+#: .\pages\templates\parts\slide3.html:109
+#: .\pages\templates\parts\slide3.html:148
 msgid "Зробити внесок"
 msgstr "Make donation"
 
-#: .\reua\settings.py:110
-msgid "Анг"
-msgstr "Eng"
+#: .\pages\templates\parts\slide2.html:8
+msgid ""
+"\n"
+"                    <b>6 млн людей в Україні</b> щодня ведуть боротьбу за "
+"доступ до питної води\n"
+"                "
+msgstr ""
+"\n"
+"                    <b>6 million people in Ukraine</b> fight for access to drinking water every day "
+"                "
 
-#: .\reua\settings.py:111
-msgid "Укр"
-msgstr "Ukr"
+#: .\pages\templates\parts\slide2.html:13
+msgid ""
+"\n"
+"                    <strong>З квітня 2022</strong> маріупольці втратили "
+"доступ до чистої питної води\n"
+"                "
+msgstr ""
+"\n"
+"                    <strong>From April 2022</strong> Mariupol residents lost  "
+"access to clean drinking water\n"
+"                "
+
+#: .\pages\templates\parts\slide2.html:28
+msgid "Доступ до питної води"
+msgstr "Access to drinking water"
+
+#: .\pages\templates\parts\slide2.html:31
+msgid "Очисні системи води в будь-яких умовах місцевості"
+msgstr "Water treatment systems for any given local conditions"
+
+#: .\pages\templates\parts\slide2.html:36
+msgid ""
+"\n"
+"                        Дії російського агресора в Україні підтвердили на "
+"практиці, що об’єкти\n"
+"                        водопостачання\n"
+"                        часто стають прямими або опосередкованими об’єктами "
+"для ударів із різних видів\n"
+"                        зброї.\n"
+"                        У населених пунктах, які постраждали від агресії, "
+"питна вода є одним із найгостріших\n"
+"                        питань гуманітарної катастрофи.\n"
+"                    "
+msgstr ""
+"\n"
+"                        The actions of the Russian aggressor in Ukraine have confirmed in practice that water supply "
+"facilities often become direct or indirect targets for strikes from various weapons. In towns affected by the "
+"aggression, drinking water is one of the most acute issues of the humanitarian catastrophe. "
+"                    "
+
+#: .\pages\templates\parts\slide2.html:47
+msgid ""
+"\n"
+"                        <b>Мобільна водоочисна установка «БС-100»</b> "
+"вирішує проблему забезпечення чистою питною водою\n"
+"                        населення у випадку пошкодження центрального "
+"водопостачання.\n"
+"                    "
+msgstr ""
+"\n"
+"Mobile block-modular water treatment facility \"BS-100\" solves the problem of providing clean drinking water "
+"to the population in case of damage to the central water supply system during wartime or other emergencies."
+"                    "
+
+#: .\pages\templates\parts\slide2.html:53
+msgid ""
+"\n"
+"                        Технологічне ноу-хау системи враховує унікальні "
+"умови кожного населеного пункту та\n"
+"                        передбачає очищення вхідної води з будь-якого "
+"джерела водопостачання будь-якого ступеню\n"
+"                        забрудненості.\n"
+"                    "
+msgstr ""
+"\n"
+"                        The technological know-how of this system takes into account the unique conditions of each "
+"town and is built for the treatment of incoming water from any source of water supply of any degree of pollution."
+"                    "
+
+#: .\pages\templates\parts\slide2.html:65
+msgid "Технічні характеристики"
+msgstr "Specifications"
+
+#: .\pages\templates\parts\slide3.html:10
+msgid "Екосистемні містечка. 350 сімей за 6 місяців"
+msgstr "Ecosystem towns. 350 families in 6 months"
+
+#: .\pages\templates\parts\slide3.html:13
+msgid ""
+"\n"
+"                    Для забезпечення нормальних, комфортних умов для "
+"проживання необхідна реалізація\n"
+"                    проектів тимчасового та постійного житла.\n"
+"                "
+msgstr ""
+"\n"
+"To ensure normal, comfortable living conditions, it is necessary to "
+"implement temporary and permanent housing projects."
+"                "
+
+#: .\pages\templates\parts\slide3.html:19
+msgid ""
+"\n"
+"                    Реалізація проекту забезпечить потребу громадян, які "
+"втратили житло, у збереженні гідного способу\n"
+"                    життя\n"
+"                    та соціалізації в новому селищі, а також створити робочі "
+"місця, що дасть можливість гідно жити й\n"
+"                    планувати своє майбутнє.\n"
+"                "
+msgstr ""
+"\n"
+"                    The implementation of the project will ensure the need of citizens who have lost their homes "
+"to maintain a decent lifestyle and socialization in the new village, as well as create jobs that will allow them "
+"to live normally and plan their future. "
+"                "
+
+#: .\pages\templates\parts\slide3.html:32
+msgid ""
+"\n"
+"                        В результаті збройної агресії РФ проти України "
+"значна кількість жителів Маріуполя залишилась\n"
+"                        без житла та була змушена переселитись в інші "
+"області України\n"
+"                    "
+msgstr ""
+"\n"
+"                        As a result of the armed aggression of the Russian Federation against Ukraine, a significant "
+"number of Mariupol residents were left homeless and were forced to move to other regions of Ukraine. "
+"                    "
+
+#: .\pages\templates\parts\slide3.html:49
+msgid "1 ЕТАП"
+msgstr "STAGE 1"
+
+#: .\pages\templates\parts\slide3.html:52
+#: .\pages\templates\parts\slide3.html:63
+msgid "Тимчасове модульне житло"
+msgstr "Temporary modular housing"
+
+#: .\pages\templates\parts\slide3.html:55
+msgid ""
+"\n"
+"                    Будівництво тимчасового житла для внутрішньо переміщених "
+"осіб з автономною системою\n"
+"                    електропостачання, водопостачання, водовідведення та "
+"опалення.<br/>\n"
+"                    Модульна система являє собою універсальний конструктор, "
+"що може адаптуватись\n"
+"                    під будь-яку відведену місцевість.\n"
+"                "
+msgstr ""
+"\n"
+"                    Construction of temporary housing for internally displaced people with an autonomous system of "
+"electricity, water supply, drainage and heating.<br/>\n"
+"The modular system is a universal constructor that can be adapted to any allotted area."
+"                "
+
+#: .\pages\templates\parts\slide3.html:69
+#: .\pages\templates\parts\slide3.html:112
+#: .\pages\templates\parts\slide3.html:151
+msgid "Детальний проект"
+msgstr "Detailed project"
+
+#: .\pages\templates\parts\slide3.html:79
+msgid "2 ЕТАП"
+msgstr "STAGE 2"
+
+#: .\pages\templates\parts\slide3.html:82
+#: .\pages\templates\parts\slide3.html:105
+msgid "Постійне житло з власною екосистемою"
+msgstr "Permanent housing with its own ecosystem"
+
+#: .\pages\templates\parts\slide3.html:85
+msgid ""
+"\n"
+"                    Внутрішньо переміщені особи з Маріуполя, які втратили "
+"дім, потребують не лише фактичного житла,\n"
+"                    але й емоційного відчуття домівки. Саме тому, план "
+"постійного житла  спроектований як автономна\n"
+"                    екосистема, з атмосферою довоєнного міста Маріуполь.\n"
+"                "
+msgstr ""
+"\n"
+"                    Internally displaced people from Mariupol who have lost their homes need not only an actual "
+"housing, but also an emotional sense of home. That is why the plan of permanent housing is designed as an autonomous "
+"ecosystem, with the atmosphere of the pre-war city of Mariupol. "
+"                "
+
+#: .\pages\templates\parts\slide3.html:92
+msgid ""
+"\n"
+"                    У проект залучені світові технології швидкого та "
+"екологічного будівництва з використанням\n"
+"                    попереднього виготовлених конструкцій. Вони дозволяють "
+"оптимальним людським ресурсом та в стислі\n"
+"                    терміни побудувати якісне та безпечне житло\n"
+"                "
+msgstr ""
+"\n"
+"                    The project involves world technologies of fast and ecological construction with the use of "
+"prefabricated structures. They allow to build safe good quality housing with optimal human resources and within a "
+"short time frame. "
+"                "
+
+#: .\pages\templates\parts\slide3.html:99
+msgid ""
+"\n"
+"                    Типові 4-поверхові будинки з квартирною площею 30-35 м "
+"кв. - ідеальне рішення для найкращого\n"
+"                    використання наявної площі будівлі.\n"
+"                "
+msgstr ""
+"\n"
+"                    Typical 4-story houses with a living area of 30-35 square meters is the ideal solution for the "
+"best use of the available building area."
+"                "
+
+#: .\pages\templates\parts\slide3.html:125
+msgid "3 ЕТАП"
+msgstr "STAGE 3"
+
+#: .\pages\templates\parts\slide3.html:128
+#: .\pages\templates\parts\slide3.html:145
+msgid "Індустріальні парки"
+msgstr "Industrial parks"
+
+#: .\pages\templates\parts\slide3.html:131
+msgid ""
+"\n"
+"                    Повноцінне повернення до повсякденного життя внутрішньо "
+"переміщених осіб можливе лише при їх\n"
+"                    впевненості у завтрашньому дні. Це потребує розширення "
+"екосистеми містечка до створення\n"
+"                    супроводжуючого індустріального парку, який зможе "
+"забезпечити жителів постійними робочими місцями,\n"
+"                    а містечко – власним виробництвом.\n"
+"                "
+msgstr ""
+"\n"
+"                    A full return to the daily lives of internally displaced people is possible only if they are "
+"confident in the future. This requires the expansion of the ecosystem of the town to create an industrial park "
+"that goes with it, which will be able to provide residents with permanent jobs, and the town with its own "
+"production ability."
+"                "
+
+#: .\pages\templates\parts\slide3.html:139
+msgid ""
+"\n"
+"                    Створене основне будівниче виробництво дасть можливість "
+"в подальшому розвиватися суміжним\n"
+"                    виробництвам: будівельних матеріалів, меблів, вікон "
+"тощо.\n"
+"                "
+msgstr ""
+"\n"
+"                    If we create a basic construction production it will give the chance to develop further "
+"adjacent productions: building materials, furniture, windows, etc. "
+"                "
+
+#: .\pages\templates\payment\new_payment.html:35
+msgid "Сделать пожертовавание"
+msgstr ""
+
+#: .\pages\views.py:64
+msgid "Помилка розбору параметрів"
+msgstr ""
+
+#: .\pages\views.py:69
+msgid "Не знайдено платежу. Мабуть Ви сплатили його раніше "
+msgstr ""
+
+#~ msgid "Анг"
+#~ msgstr "Eng"
+
+#~ msgid "Укр"
+#~ msgstr "Ukr"
