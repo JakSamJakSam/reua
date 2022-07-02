@@ -78,6 +78,7 @@ class ConsituentsDocs(models.Model):
 class Addresses(models.Model):
     site = models.OneToOneField(Site, on_delete=models.PROTECT, verbose_name=_('Сайт'))
     addr = models.TextField(verbose_name=_('Адреса'), blank=True, null=True, default=None)
+    addr_en = models.TextField(verbose_name=_('Адреса (англ.)'), blank=True, null=True, default=None)
     phone = PhoneNumberField(verbose_name=_('Телефон'), blank=True, null=True, default=None)
     facebook = models.URLField(verbose_name='Facebook', blank=True, null=True, default=None)
     instagram = models.URLField(verbose_name='Instagram', blank=True, null=True, default=None)
@@ -86,6 +87,12 @@ class Addresses(models.Model):
 
     def __str__(self):
         return f'{self.site}'
+
+    @property
+    def addr_title(self):
+        lg = get_language()
+        localized_title = getattr(self, f'addr_{lg}', self.addr)
+        return localized_title if localized_title else self.addr
 
     class Meta:
         verbose_name = _("Адреса компанії")
