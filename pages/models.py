@@ -35,6 +35,7 @@ class BankTransferInfo(models.Model):
     account = models.CharField(max_length=29, verbose_name=_("Рахунок"))
     edrpou = models.CharField(max_length=10, verbose_name=_("Код за ЄДРПОУ"))
     payee = models.CharField(max_length=100, verbose_name=_("Отримувач"))
+    purpose = models.TextField(verbose_name=_("Призначення платежу"))
 
     def __str__(self):
         return f'{self.payee} ({self.project})'
