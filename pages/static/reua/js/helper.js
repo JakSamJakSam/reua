@@ -61,7 +61,12 @@
     const bankButton = paymentTypeOffcanvas.querySelector('[data-payment_type="bank_account"]');
     if (projectsData[project].bank_accounts) {
       const nextOffCanvas = bankButton.getAttribute('href');
-      const onSuccess = () => console.log(nextOffCanvas)
+      const onSuccess = () => {
+        const ofCanvas = bootstrap.Offcanvas.getOrCreateInstance(document.querySelector(nextOffCanvas));
+        const currentofCanvas = bootstrap.Offcanvas.getOrCreateInstance(paymentTypeOffcanvas);
+        currentofCanvas.hide();
+        ofCanvas.show();
+      };
       bankButton.addEventListener('click', get_check_agree(onSuccess))
       removeClass(bankButton, 'disabled')
     } else {
