@@ -22,9 +22,25 @@
     paymentTypeOffcanvas.dataset.project = project;
     // CREDIT CARD
     const ccButton = paymentTypeOffcanvas.querySelector('[data-payment_type="credit_card"]');
+    function get_check_agree(onSucess=null){
+      function check_agree(e){
+        const agreeCheckbox = document.getElementById('public_offer_agree');
+        if (!agreeCheckbox.checked){
+          e.stopPropagation();
+          e.preventDefault();
+          addClass(agreeCheckbox, 'is-invalid')
+          agreeCheckbox.scrollIntoView({ behavior:"smooth" })
+        } else {
+          removeClass(agreeCheckbox, 'is-invalid')
+          if (onSucess) onSucess(e);
+        }
+      }
+      return check_agree;
+    }
     if (projectsData[project].cardURL) {
       removeClass(ccButton, 'disabled')
       ccButton.setAttribute('href', projectsData[project].cardURL)
+      ccButton.addEventListener('click', get_check_agree())
     } else {
       addClass(ccButton, 'disabled')
     }
@@ -33,6 +49,7 @@
     if (projectsData[project].cryptoURL) {
       cryptoButton.setAttribute('href', projectsData[project].cryptoURL)
       removeClass(cryptoButton, 'disabled')
+      cryptoButton.addEventListener('click', get_check_agree())
     } else {
       addClass(cryptoButton, 'disabled')
     }
@@ -43,7 +60,9 @@
     // bank
     const bankButton = paymentTypeOffcanvas.querySelector('[data-payment_type="bank_account"]');
     if (projectsData[project].bank_accounts) {
-      // cryptoButton.setAttribute('href', projectsData[project].cryptoURL)
+      const nextOffCanvas = bankButton.getAttribute('href');
+      const onSuccess = () => console.log(nextOffCanvas)
+      bankButton.addEventListener('click', get_check_agree(onSuccess))
       removeClass(bankButton, 'disabled')
     } else {
       addClass(bankButton, 'disabled')

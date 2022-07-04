@@ -1,4 +1,5 @@
 import uuid
+from functools import reduce
 
 from django.conf import settings
 from django.contrib import messages
@@ -10,6 +11,7 @@ from django.views.generic import TemplateView, FormView, RedirectView
 from django.utils.translation import gettext_lazy as _, get_language
 from liqpay import LiqPay
 
+from pages.enums import ConsituentsDocsKinds
 from pages.forms import PaymentForm
 from pages.models import Project, ConsituentsDocs, Addresses, BankTransferInfo
 
@@ -45,7 +47,12 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         ctx = super(IndexView, self).get_context_data(**kwargs)
         current_site = get_current_site(self.request)
-        ctx['consituents_docs'] = ConsituentsDocs.objects.all()  # TODO Cashe it
+        cdocs = ConsituentsDocs.objects.all()  # TODO Cashe it
+
+        ctx['consituents_docs'] = cdocs
+        public_offer_url = reduce(lambda R, d : d.file.url if d.kind == ConsituentsDocsKinds.PUBLIC_OFFER.value else R, cdocs, None)
+        ctx['public_offer_url'] = public_offer_url
+
         ctx['projects'] = get_projects_data()
         ctx['address'], created = Addresses.objects.get_or_create(site_id=current_site.id)  # TODO Cashe it
 

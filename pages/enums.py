@@ -6,3 +6,6 @@ class Currency(Enum):
     USD = 'USD'
     EUR = 'EUR'
     GBP = 'GBP'
+
+class ConsituentsDocsKinds(Enum):
+    PUBLIC_OFFER = 'offer'

@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _, get_language
 from django.contrib.sites.models import Site
 from phonenumber_field.modelfields import PhoneNumberField
 
-from pages.enums import Currency
+from pages.enums import Currency, ConsituentsDocsKinds
 
 
 class Project(models.Model):
@@ -63,6 +63,9 @@ class ConsituentsDocs(models.Model):
         choices=(('pdf', 'pdf'),)
     )
     order = models.SmallIntegerField(verbose_name = _('Номер за порядком'))
+    kind = models.CharField(max_length=10, verbose_name=_('Вид файлу'), null=True, blank=True, default=None,
+            choices=((ConsituentsDocsKinds.PUBLIC_OFFER.value, _('Договір публичної оферти')),)
+                            )
 
     @property
     def title(self):
