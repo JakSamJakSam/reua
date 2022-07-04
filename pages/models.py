@@ -62,6 +62,7 @@ class ConsituentsDocs(models.Model):
         verbose_name=_("Тип файлу"),
         choices=(('pdf', 'pdf'),)
     )
+    order = models.SmallIntegerField(verbose_name = _('Номер за порядком'))
 
     @property
     def title(self):
@@ -75,7 +76,7 @@ class ConsituentsDocs(models.Model):
     class Meta:
         verbose_name = _("Установчий документ")
         verbose_name_plural = _("Установчи документи")
-        ordering = ('id',)
+        ordering = ('order',)
 
 
 class Addresses(models.Model):
