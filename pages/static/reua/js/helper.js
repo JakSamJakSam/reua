@@ -75,7 +75,7 @@
       (accItem, idx) => {
         const b = accItem.querySelector('.accordion-button')
         const c = accItem.querySelector('.accordion-collapse')
-        if (idx === 0) {
+        if (idx === 0 && false) {
           removeClass(b, 'collapsed');
           b.setAttribute('aria-expanded', "true");
           addClass(c, "show");
@@ -93,17 +93,3 @@
   }
 
 }))
-// var PaymentHelper = {
-//   onProjectClick: function (e) {
-//     console.log(e)
-//   },
-//   init: function () {
-//     PaymentHelper.initButtons();
-//   },
-//   initButtons: function (){
-//     console.log(PaymentHelper._projectData);
-//     // buttons.forEach((item) => {
-//     //   item.addEventListener("click", onProjectClick);
-//     // });
-//   },
-// }

@@ -3,6 +3,8 @@ from django.utils.translation import gettext_lazy as _, get_language
 from django.contrib.sites.models import Site
 from phonenumber_field.modelfields import PhoneNumberField
 
+from pages.enums import Currency
+
 
 class Project(models.Model):
     identity = models.CharField(max_length=10, unique=True, verbose_name=_('Ідентифікатор'))
@@ -40,6 +42,7 @@ class BankTransferInfo(models.Model):
     beneficiary_address= models.TextField(verbose_name="Beneficiary address", blank=True, null=True, default=None)
     correspondent_bank_name= models.CharField(max_length=100, verbose_name="Correspondent bank name", blank=True, null=True, default=None)
     correspondent_bank_bic= models.CharField(max_length=8, verbose_name="Correspondent bank bic", blank=True, null=True, default=None)
+    currency = models.CharField(max_length=3, verbose_name=_("Валюта"), choices=((r.value, r.value) for r in Currency) )
 
     def __str__(self):
         return f'{self.name} ({self.project})'

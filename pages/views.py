@@ -25,6 +25,20 @@ def get_projects_data():
     } for p in Project.objects.all()]  # TODO Cashe it
     return projects
 
+def get_trasnfers():
+    transfres = BankTransferInfo.objects.all().prefetch_related('project')
+    keys = set((t.currency, t.project.identity) for t in transfres)
+    result = [
+        {
+            'id': f'{currency}-{project_identity}',
+            'currency': currency,
+            'project_identity': project_identity,
+            'items': [t for t in transfres if t.currency == currency and t.project.identity == project_identity],
+        } for currency, project_identity in keys
+    ]
+
+    return result
+
 class IndexView(TemplateView):
     template_name = 'index.html'
 
@@ -34,7 +48,8 @@ class IndexView(TemplateView):
         ctx['consituents_docs'] = ConsituentsDocs.objects.all()  # TODO Cashe it
         ctx['projects'] = get_projects_data()
         ctx['address'], created = Addresses.objects.get_or_create(site_id=current_site.id)  # TODO Cashe it
-        ctx['transfers'] = BankTransferInfo.objects.all()  # TODO Cashe it
+
+        ctx['transfers'] = get_trasnfers()  # TODO Cashe it
         return ctx
 
 

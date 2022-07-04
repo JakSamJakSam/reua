@@ -91,61 +91,64 @@
         <h3 class="fw-normal text-white">{% trans "Оберіть зручний метод оплати" %}</h3>
         <div class="accordion" id="bank_acc_payment_accordion">
             {% for t in transfers %}
-                <div class="accordion-item" data-project="{{ t.project.identity }}">
+                <div class="accordion-item" data-project="{{ t.project_identity }}">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button"
                                 data-bs-toggle="collapse"
                                 data-bs-target="#transfer-{{ t.id }}"
                                 aria-expanded="false"
                                 aria-controls="transfer-{{ t.id }}">
-                            {{ t.name }}
+                            {{ t.currency }}
                         </button>
                     </h2>
                     <div id="transfer-{{ t.id }}" class="accordion-collapse collapse"
                          data-bs-parent="#bank_acc_payment_accordion">
                         <div class="accordion-body">
-                            <dl>
-                                {% if t.bank %}
-                                <dt>{% trans "Банк" %}</dt>
-                                <dd>{{ t.bank }}</dd>
-                                {% endif %}
-                                {% if t.mfo %}
-                                <dt>{% trans "МФО" %}</dt>
-                                <dd>{{ t.mfo }}</dd>
-                                {% endif %}
-                                {% if t.account %}
-                                <dt>{% trans "Рахунок №" %}</dt>
-                                <dd>{{ t.account }}</dd>
-                                {% endif %}
-                                {% if t.edrpou %}
-                                <dt>{% trans "Код єдрпоу" %}</dt>
-                                <dd>{{ t.edrpou }}</dd>
-                                {% endif %}
-                                {% if t.payee %}
-                                <dt>{% trans "Отримувач" %}</dt>
-                                <dd>{{ t.payee }}</dd>
-                                {% endif %}
-                                {% if t.bic %}
-                                <dt>Beneficiary bic</dt>
-                                <dd>{{ t.bic }}</dd>
-                                {% endif %}
-                                {% if t.beneficiary_address %}
-                                <dt>Beneficiary address</dt>
-                                <dd>{{ t.beneficiary_address }}</dd>
-                                {% endif %}
-                                {% if t.correspondent_bank_name %}
-                                <dt>Correspondent bank name</dt>
-                                <dd>{{ t.correspondent_bank_name }}</dd>
-                                {% endif %}
-                                {% if t.correspondent_bank_bic %}
-                                <dt>Correspondent bank bic</dt>
-                                <dd>{{ t.correspondent_bank_bic }}</dd>
-                                {% endif %}
-                                {% if t.purpose %}
-                                <dt>{% trans "Призначення платежу" %}</dt>
-                                <dd>{{ t.purpose }}</dd>
-                                {% endif %}
-                            </dl>
+                            {% for t_item in t.items %}
+                                <dl>
+                                    {% if t_item.bank %}
+                                        <dt>{% trans "Банк" %}</dt>
+                                        <dd>{{ t_item.bank }}</dd>
+                                    {% endif %}
+                                    {% if t_item.mfo %}
+                                        <dt>{% trans "МФО" %}</dt>
+                                        <dd>{{ t_item.mfo }}</dd>
+                                    {% endif %}
+                                    {% if t_item.account %}
+                                        <dt>{% trans "Рахунок №" %}</dt>
+                                        <dd>{{ t_item.account }}</dd>
+                                    {% endif %}
+                                    {% if t_item.edrpou %}
+                                        <dt>{% trans "Код єдрпоу" %}</dt>
+                                        <dd>{{ t_item.edrpou }}</dd>
+                                    {% endif %}
+                                    {% if t_item.payee %}
+                                        <dt>{% trans "Отримувач" %}</dt>
+                                        <dd>{{ t_item.payee }}</dd>
+                                    {% endif %}
+                                    {% if t_item.bic %}
+                                        <dt>Beneficiary bic</dt>
+                                        <dd>{{ t_item.bic }}</dd>
+                                    {% endif %}
+                                    {% if t_item.beneficiary_address %}
+                                        <dt>Beneficiary address</dt>
+                                        <dd>{{ t_item.beneficiary_address }}</dd>
+                                    {% endif %}
+                                    {% if t_item.correspondent_bank_name %}
+                                        <dt>Correspondent bank name</dt>
+                                        <dd>{{ t_item.correspondent_bank_name }}</dd>
+                                    {% endif %}
+                                    {% if t_item.correspondent_bank_bic %}
+                                        <dt>Correspondent bank bic</dt>
+                                        <dd>{{ t_item.correspondent_bank_bic }}</dd>
+                                    {% endif %}
+                                    {% if t_item.purpose %}
+                                        <dt>{% trans "Призначення платежу" %}</dt>
+                                        <dd>{{ t_item.purpose }}</dd>
+                                    {% endif %}
+                                </dl>
+                                <hr/>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
