@@ -2,26 +2,26 @@
 {% load static %}
 
 <div class="px-0 landing_block row" id="slide2">
-    <div class="col col-12 col-lg-6 bg-warning landing_col d-none d-lg-block">
-        <div class="mx-auto text-left text-block">
+    <div class="col col-12 col-lg-6 landing_col d-none d-lg-block  pb-4">
+        <div class="mx-auto text-left text-block d-flex flex-column justify-content-between h-100">
             <p class="mb-3 text-start lead">
                 {% blocktrans %}
                     <b>6 млн людей в Україні</b> щодня ведуть боротьбу за доступ до питної води
                 {% endblocktrans %}
             </p>
-{#            <p class="mb-3 text-start lead">#}
-{#                {% blocktrans %}#}
-{#                    <strong>З квітня 2022</strong> маріупольці втратили доступ до чистої питної води#}
-{#                {% endblocktrans %}#}
-{##}
-{#            </p>#}
+            {#            <p class="mb-3 text-start lead">#}
+            {#                {% blocktrans %}#}
+            {#                    <strong>З квітня 2022</strong> маріупольці втратили доступ до чистої питної води#}
+            {#                {% endblocktrans %}#}
+            {##}
+            {#            </p>#}
             <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" data-project="water"
                class="btn btn-dark p-3 w-100 text-uppercase fw-500 mt-5">
                 {% trans "Зробити внесок" %}
             </a>
         </div>
     </div>
-    <div class="col col-lg-6 landing_col">
+    <div class="col col-12 col-lg-6 landing_col bg-white pb-0">
         <div class="mx-auto text-left text-block">
             <div class="text-primary">
                 <h2 class="text-uppercase fw-bold mb-5">
@@ -42,6 +42,14 @@
                         питань гуманітарної катастрофи.
                     {% endblocktrans %}
                 </p>
+            </div>
+        </div>
+    </div>
+    <div class="col col-12 col-lg-6 landing_col  d-none d-lg-block">
+    </div>
+    <div class="col col-12 col-lg-6 landing_col bg-white">
+        <div class="mx-auto text-left text-block">
+            <div>
                 <img class="d-block mx-auto mb-5 w-100" src="{% static "reua/img/water_machine.png" %}" alt="">
                 <p>
                     {% blocktrans %}
