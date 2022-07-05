@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-02 09:01+0300\n"
+"POT-Creation-Date: 2022-07-05 15:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,105 +26,147 @@ msgstr "Payment currency"
 msgid "Сума пожертви"
 msgstr "Donation amount"
 
-#: .\pages\models.py:8
+#: .\pages\models.py:10
 msgid "Ідентифікатор"
 msgstr "Identity"
 
-#: .\pages\models.py:9 .\pages\models.py:32 .\pages\models.py:54
+#: .\pages\models.py:11 .\pages\models.py:34 .\pages\models.py:58
 msgid "Найменування"
 msgstr "Name"
 
-#: .\pages\models.py:10 .\pages\models.py:55
+#: .\pages\models.py:12 .\pages\models.py:59
 msgid "Найменування (англ.)"
 msgstr "Name (en)"
 
-#: .\pages\models.py:11
+#: .\pages\models.py:13
 msgid "Відключено"
 msgstr "Disabled"
 
-#: .\pages\models.py:12
+#: .\pages\models.py:14
 msgid "Адреса платіжної системи для 'crypto'"
 msgstr "URL for crypto"
 
-#: .\pages\models.py:13
+#: .\pages\models.py:15
 msgid "Адреса платіжної системи для 'credit-card'"
 msgstr "URL for credit-card"
 
-#: .\pages\models.py:25 .\pages\models.py:31
+#: .\pages\models.py:27 .\pages\models.py:33
 msgid "Проект"
 msgstr "Project"
 
-#: .\pages\models.py:26
+#: .\pages\models.py:28
 msgid "Проекти"
 msgstr "Projects"
 
-#: .\pages\models.py:33 .\pages\templates\parts\payment.html:109
+#: .\pages\models.py:35 .\pages\templates\parts\payment.html:122
 msgid "Банк"
 msgstr "Bank"
 
-#: .\pages\models.py:34 .\pages\templates\parts\payment.html:113
+#: .\pages\models.py:36 .\pages\templates\parts\payment.html:126
 msgid "МФО"
 msgstr "MFO"
 
-#: .\pages\models.py:35
+#: .\pages\models.py:37
 msgid "Рахунок"
 msgstr "Account number"
 
-#: .\pages\models.py:36
+#: .\pages\models.py:38
 msgid "Код за ЄДРПОУ"
 msgstr "EDRPOU code"
 
-#: .\pages\models.py:37 .\pages\templates\parts\payment.html:125
+#: .\pages\models.py:39 .\pages\templates\parts\payment.html:138
 msgid "Отримувач"
 msgstr "Beneficiary"
 
-#: .\pages\models.py:38 .\pages\templates\parts\payment.html:145
+#: .\pages\models.py:40 .\pages\templates\parts\payment.html:162
 msgid "Призначення платежу"
 msgstr "Purpose"
 
-#: .\pages\models.py:48
+#: .\pages\models.py:46
+#, fuzzy
+#| msgid "Валюта платежу"
+msgid "Валюта"
+msgstr "Payment currency"
+
+#: .\pages\models.py:52
 msgid "Реквізит банківського переводу"
 msgstr "Bank transfer details"
 
-#: .\pages\models.py:49
+#: .\pages\models.py:53
 msgid "Реквізити банківського переводу"
 msgstr "Bank transfer details"
 
-#: .\pages\models.py:56
+#: .\pages\models.py:60
 msgid "Файл"
 msgstr "File"
 
-#: .\pages\models.py:59
+#: .\pages\models.py:63
 msgid "Тип файлу"
 msgstr "File type"
 
-#: .\pages\models.py:73
+#: .\pages\models.py:66
+msgid "Номер за порядком"
+msgstr ""
+
+#: .\pages\models.py:67
+#, fuzzy
+#| msgid "Тип файлу"
+msgid "Вид файлу"
+msgstr "File type"
+
+#: .\pages\models.py:68
+msgid "Договір публичної оферти"
+msgstr ""
+
+#: .\pages\models.py:81
 msgid "Установчий документ"
 msgstr "Founding document"
 
-#: .\pages\models.py:74
+#: .\pages\models.py:82
 msgid "Установчи документи"
 msgstr "Founding documents"
 
-#: .\pages\models.py:79
+#: .\pages\models.py:87
 msgid "Сайт"
 msgstr "Site"
 
-#: .\pages\models.py:80
+#: .\pages\models.py:88
 msgid "Адреса"
 msgstr "Address"
 
-#: .\pages\models.py:81
+#: .\pages\models.py:89
+#, fuzzy
+#| msgid "Адреса"
+msgid "Адреса (англ.)"
+msgstr "Address (eng)"
+
+#: .\pages\models.py:90
 msgid "Телефон"
 msgstr "Phone number"
 
-#: .\pages\models.py:91
+#: .\pages\models.py:107
 msgid "Адреса компанії"
 msgstr "Address of company"
 
-#: .\pages\models.py:92
+#: .\pages\models.py:108
 msgid "Адреси компанії"
 msgstr "Address of companies"
+
+#: .\pages\models.py:113
+msgid "Завантажено"
+msgstr "Uploaded"
+
+#: .\pages\models.py:114
+msgid "Звіт"
+msgstr "Report"
+
+#: .\pages\models.py:120
+msgid "Фінансовий звіт"
+msgstr "Financial report"
+
+#: .\pages\models.py:121
+msgid "Фінансові звіти"
+msgstr "Financial reports"
 
 #: .\pages\templates\index.html:5
 msgid "Головна сторінка"
@@ -156,53 +198,91 @@ msgstr "Bank Transfer"
 msgid "Криптовалюта"
 msgstr "Crypto"
 
-#: .\pages\templates\parts\payment.html:91
+#: .\pages\templates\parts\payment.html:81
+msgid "Я погоджуюсь з умовами"
+msgstr "I agree to the terms of the"
+
+#: .\pages\templates\parts\payment.html:83
+msgid "договору публічної оферти"
+msgstr "public offer agreement"
+
+#: .\pages\templates\parts\payment.html:103
 msgid "Оберіть зручний метод оплати"
 msgstr "Choose a convenient payment method"
 
-#: .\pages\templates\parts\payment.html:117
+#: .\pages\templates\parts\payment.html:130
 msgid "Рахунок №"
 msgstr "Account number"
 
-#: .\pages\templates\parts\payment.html:121
+#: .\pages\templates\parts\payment.html:134
 msgid "Код єдрпоу"
 msgstr "EDRPOU code"
 
-#: .\pages\templates\parts\slide1.html:9
+#: .\pages\templates\parts\report.html:8 .\pages\templates\parts\report.html:17
 msgid ""
 "\n"
-"                    Офіційна фандрейзингова платформа Фонду «Відбудуємо нашу "
+"                    Переглянути звітність:\n"
+"                "
+msgstr ""
+"\n"
+"                    View report:\n"
+"                "
+
+#: .\pages\templates\parts\report.html:25
+#, fuzzy
+#| msgid "Детальний проект"
+msgid "Детальний звіт "
+msgstr "Detailed project"
+
+#: .\pages\templates\parts\slide1.html:9
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "                    Офіційна фандрейзингова платформа Фонду «Відбудуємо "
+#| "нашу Україну» за підтримки\n"
+#| "                "
+msgid ""
+"\n"
+"                    Офіційна онлайн-платформа Фонду «Відбудуємо нашу "
 "Україну» за підтримки\n"
 "                "
 msgstr ""
 "\n"
-"                    Official fundraising platform of the «Rebuild Our "
-"Ukraine» Foundation with support \n"
+"                    Official online platform of the «Rebuild Our Ukraine» "
+"Foundation with \n"
 "                "
 
 #: .\pages\templates\parts\slide1.html:14
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "                    Платформа працює на збір коштів для вирішення двох "
+#| "першочергових гуманітарних задач\n"
+#| "                    жителів\n"
+#| "                    Маріуполя:\n"
+#| "                "
 msgid ""
 "\n"
-"                    Платформа працює на збір коштів для вирішення двох "
+"                    Платформа працює на збір коштів для вирішення "
 "першочергових гуманітарних задач\n"
-"                    жителів\n"
-"                    Маріуполя:\n"
+"                    внутрішньо переміщених осіб з Маріуполя та України в "
+"цілому:\n"
 "                "
 msgstr ""
 "\n"
 "                    The platform exists with the aim to raise funds to "
-"address  two priority humanitarian issues of Mariupol "
-"residents:                "
+"address priority humanitarian issues both for internally displaced people "
+"from Mariupol and Ukraine in general:                                "
 
-#: .\pages\templates\parts\slide1.html:23
+#: .\pages\templates\parts\slide1.html:22
 msgid "Питна вода"
 msgstr "Drinking water"
 
-#: .\pages\templates\parts\slide1.html:28 .\pages\templates\parts\slide3.html:7
+#: .\pages\templates\parts\slide1.html:27 .\pages\templates\parts\slide3.html:7
 msgid "Відбудова житла"
 msgstr "Re-housing"
 
-#: .\pages\templates\parts\slide1.html:35
+#: .\pages\templates\parts\slide1.html:34
 #: .\pages\templates\parts\slide2.html:20
 #: .\pages\templates\parts\slide2.html:61
 #: .\pages\templates\parts\slide3.html:41
@@ -223,21 +303,11 @@ msgstr ""
 "                    <b>6 million people in Ukraine</b> fight for access to "
 "drinking water every day                                 "
 
-#: .\pages\templates\parts\slide2.html:13
-msgid ""
-"\n"
-"                    <strong>З квітня 2022</strong> маріупольці втратили "
-"доступ до чистої питної води\n"
-"                "
-msgstr ""
-"\n"
-"                    <strong>From April 2022</strong> Mariupol residents "
-"lost  access to clean drinking water\n"
-"                "
-
 #: .\pages\templates\parts\slide2.html:28
-msgid "Доступ до питної води"
-msgstr "Access to drinking water"
+#, fuzzy
+#| msgid "Доступ до питної води"
+msgid "Доступ до питної води в неокупованих територіях"
+msgstr "Access to drinking water in unoccupied territories"
 
 #: .\pages\templates\parts\slide2.html:31
 msgid "Очисні системи води в будь-яких умовах місцевості"
@@ -483,13 +553,24 @@ msgstr ""
 msgid "Сделать пожертовавание"
 msgstr "Make a donation"
 
-#: .\pages\views.py:64
+#: .\pages\views.py:87
 msgid "Помилка розбору параметрів"
 msgstr "Parameters error"
 
-#: .\pages\views.py:69
+#: .\pages\views.py:92
 msgid "Не знайдено платежу. Мабуть Ви сплатили його раніше "
 msgstr "Payment not found"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    <strong>З квітня 2022</strong> маріупольці втратили "
+#~ "доступ до чистої питної води\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "                    <strong>From April 2022</strong> Mariupol residents "
+#~ "lost  access to clean drinking water\n"
+#~ "                "
 
 #~ msgid "Анг"
 #~ msgstr "Eng"
