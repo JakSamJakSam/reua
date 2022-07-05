@@ -142,6 +142,10 @@
                                         <dt>Beneficiary bic</dt>
                                         <dd>{{ t_item.bic }}</dd>
                                     {% endif %}
+                                    {% if t_item.beneficiary_bank %}
+                                        <dt>Beneficiary bank</dt>
+                                        <dd>{{ t_item.payee }}</dd>
+                                    {% endif %}
                                     {% if t_item.beneficiary_address %}
                                         <dt>Beneficiary address</dt>
                                         <dd>{{ t_item.beneficiary_address }}</dd>

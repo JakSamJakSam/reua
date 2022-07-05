@@ -40,6 +40,7 @@ class BankTransferInfo(models.Model):
     purpose = models.TextField(verbose_name=_("Призначення платежу"))
     bic = models.CharField(max_length=100, verbose_name="Beneficiary bic", blank=True, null=True, default=None)
     beneficiary_address= models.TextField(verbose_name="Beneficiary address", blank=True, null=True, default=None)
+    beneficiary_bank= models.TextField(verbose_name="Beneficiary bank", blank=True, null=True, default=None)
     correspondent_bank_name= models.CharField(max_length=100, verbose_name="Correspondent bank name", blank=True, null=True, default=None)
     correspondent_bank_bic= models.CharField(max_length=8, verbose_name="Correspondent bank bic", blank=True, null=True, default=None)
     currency = models.CharField(max_length=3, verbose_name=_("Валюта"), choices=((r.value, r.value) for r in Currency) )
