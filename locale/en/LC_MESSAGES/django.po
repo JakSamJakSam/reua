@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-05 15:58+0300\n"
+"POT-Creation-Date: 2022-07-05 16:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,8 +82,6 @@ msgid "Призначення платежу"
 msgstr "Purpose"
 
 #: .\pages\models.py:46
-#, fuzzy
-#| msgid "Валюта платежу"
 msgid "Валюта"
 msgstr "Payment currency"
 
@@ -109,14 +106,12 @@ msgid "Номер за порядком"
 msgstr ""
 
 #: .\pages\models.py:67
-#, fuzzy
-#| msgid "Тип файлу"
 msgid "Вид файлу"
-msgstr "File type"
+msgstr "File kind"
 
 #: .\pages\models.py:68
 msgid "Договір публичної оферти"
-msgstr ""
+msgstr "Public offer agreement"
 
 #: .\pages\models.py:81
 msgid "Установчий документ"
@@ -135,8 +130,6 @@ msgid "Адреса"
 msgstr "Address"
 
 #: .\pages\models.py:89
-#, fuzzy
-#| msgid "Адреса"
 msgid "Адреса (англ.)"
 msgstr "Address (eng)"
 
@@ -229,18 +222,10 @@ msgstr ""
 "                "
 
 #: .\pages\templates\parts\report.html:25
-#, fuzzy
-#| msgid "Детальний проект"
 msgid "Детальний звіт "
-msgstr "Detailed project"
+msgstr "Detailed report"
 
 #: .\pages\templates\parts\slide1.html:9
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                    Офіційна фандрейзингова платформа Фонду «Відбудуємо "
-#| "нашу Україну» за підтримки\n"
-#| "                "
 msgid ""
 "\n"
 "                    Офіційна онлайн-платформа Фонду «Відбудуємо нашу "
@@ -253,14 +238,6 @@ msgstr ""
 "                "
 
 #: .\pages\templates\parts\slide1.html:14
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "                    Платформа працює на збір коштів для вирішення двох "
-#| "першочергових гуманітарних задач\n"
-#| "                    жителів\n"
-#| "                    Маріуполя:\n"
-#| "                "
 msgid ""
 "\n"
 "                    Платформа працює на збір коштів для вирішення "
@@ -304,8 +281,6 @@ msgstr ""
 "drinking water every day                                 "
 
 #: .\pages\templates\parts\slide2.html:28
-#, fuzzy
-#| msgid "Доступ до питної води"
 msgid "Доступ до питної води в неокупованих територіях"
 msgstr "Access to drinking water in unoccupied territories"
 
