@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load static %}
+
+<div class="px-0 row" id="slide_report">
+    <div class="col col-12 col-lg-6 bg-warning landing_col d-none d-lg-block">
+        <div class="mx-auto text-left text-block">
+            <h2 class="fw-500 mb-4 mt-2">
+                {% blocktrans %}
+                    Переглянути звітність:
+                {% endblocktrans %}
+            </h2>
+        </div>
+    </div>
+    <div class="col col-lg-6 landing_col bg-warning">
+        <div class="mx-auto text-left text-block">
+            <h2 class="fw-500 mb-4 d-block d-lg-none">
+                {% blocktrans %}
+                    Переглянути звітність:
+                {% endblocktrans %}
+            </h2>
+            <a href="{% if not fin_report %}#{% else %}{{ fin_report.file.url }}{% endif %}"
+               class="btn btn-dark p-3 w-100 text-uppercase fw-500 {% if not fin_report %} disabled {% endif %} "
+               target="_blank"
+            >
+                {% trans "Детальний звіт " %}
+                <i class="fa-solid fa-arrow-up" data-fa-transform="rotate-45"></i>
+            </a>
+
+        </div>
+    </div>
+</div>

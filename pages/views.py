@@ -13,7 +13,7 @@ from liqpay import LiqPay
 
 from pages.enums import ConsituentsDocsKinds
 from pages.forms import PaymentForm
-from pages.models import Project, ConsituentsDocs, Addresses, BankTransferInfo
+from pages.models import Project, ConsituentsDocs, Addresses, BankTransferInfo, FinancialReport
 
 
 def get_projects_data():
@@ -57,6 +57,7 @@ class IndexView(TemplateView):
         ctx['address'], created = Addresses.objects.get_or_create(site_id=current_site.id)  # TODO Cashe it
 
         ctx['transfers'] = get_trasnfers()  # TODO Cashe it
+        ctx['fin_report'] = FinancialReport.objects.first()  # TODO Cashe it
         return ctx
 
 

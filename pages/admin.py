@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from pages.models import Project, BankTransferInfo, ConsituentsDocs, Addresses
+from pages.models import Project, BankTransferInfo, ConsituentsDocs, Addresses, FinancialReport
 
 admin.site.register(Project, admin.ModelAdmin)
 
@@ -13,3 +13,4 @@ admin.site.register(BankTransferInfo, BankTransferInfoAdmin)
 
 admin.site.register(ConsituentsDocs, admin.ModelAdmin)
 admin.site.register(Addresses, admin.ModelAdmin)
+admin.site.register(FinancialReport, admin.ModelAdmin)

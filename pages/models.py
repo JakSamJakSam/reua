@@ -108,3 +108,15 @@ class Addresses(models.Model):
         verbose_name_plural = _("Адреси компанії")
         ordering = ('id',)
 
+
+class FinancialReport(models.Model):
+    uploaded_at = models.DateTimeField(verbose_name=_("Завантажено"), auto_now_add=True, editable=False)
+    file = models.FileField(upload_to='reports', verbose_name=_('Звіт'))
+
+    def __str__(self):
+        return f'Звіт від {self.uploaded_at.strftime("%c")}'
+
+    class Meta:
+        verbose_name = _("Фінансовий звіт")
+        verbose_name_plural = _("Фінансові звіти")
+        ordering = ('-uploaded_at',)
