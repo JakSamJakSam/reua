@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-05 16:11+0300\n"
+"POT-Creation-Date: 2022-07-05 17:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,9 +175,12 @@ msgid "Зв’язатись з нами та підписатися на нас
 msgstr "Contact and follow us:"
 
 #: .\pages\templates\parts\payment.html:14
-#: .\pages\templates\parts\payment.html:44
 msgid "Оберіть категорію внеску"
 msgstr "Choose a payment category"
+
+#: .\pages\templates\parts\payment.html:44
+msgid "Оберіть форму оплати"
+msgstr "Choose a form of payment"
 
 #: .\pages\templates\parts\payment.html:51
 msgid "Кредитна карта"
@@ -285,7 +288,7 @@ msgid "Доступ до питної води в неокупованих те�
 msgstr "Access to drinking water in unoccupied territories"
 
 #: .\pages\templates\parts\slide2.html:31
-msgid "Очисні системи води в будь-яких умовах місцевості"
+msgid "Очисні системи для будь-яких умов місцевості"
 msgstr "Water treatment systems for any given local conditions"
 
 #: .\pages\templates\parts\slide2.html:36
