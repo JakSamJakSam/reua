@@ -139,7 +139,7 @@
                                         <dd>{{ t_item.payee }}</dd>
                                     {% endif %}
                                     {% if t_item.bic %}
-                                        <dt>Beneficiary bic</dt>
+                                        <dt>Beneficiary (SWIFT)</dt>
                                         <dd>{{ t_item.bic }}</dd>
                                     {% endif %}
                                     {% if t_item.beneficiary_bank %}
@@ -149,6 +149,10 @@
                                     {% if t_item.beneficiary_address %}
                                         <dt>Beneficiary address</dt>
                                         <dd>{{ t_item.beneficiary_address }}</dd>
+                                    {% endif %}
+                                    {% if t_item.iban %}
+                                        <dt>IBAN</dt>
+                                        <dd>{{ t_item.iban }}</dd>
                                     {% endif %}
                                     {% if t_item.correspondent_bank_name %}
                                         <dt>Correspondent bank name</dt>
