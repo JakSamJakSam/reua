@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-05 17:17+0300\n"
+"POT-Creation-Date: 2022-07-06 17:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -264,7 +264,7 @@ msgstr "Re-housing"
 
 #: .\pages\templates\parts\slide1.html:34
 #: .\pages\templates\parts\slide2.html:20
-#: .\pages\templates\parts\slide2.html:61
+#: .\pages\templates\parts\slide2.html:69
 #: .\pages\templates\parts\slide3.html:41
 #: .\pages\templates\parts\slide3.html:66
 #: .\pages\templates\parts\slide3.html:109
@@ -312,7 +312,7 @@ msgstr ""
 "aggression, drinking water is one of the most acute issues of the "
 "humanitarian catastrophe.                                     "
 
-#: .\pages\templates\parts\slide2.html:47
+#: .\pages\templates\parts\slide2.html:55
 msgid ""
 "\n"
 "                        <b>Мобільна водоочисна установка «БС-100»</b> "
@@ -327,7 +327,7 @@ msgstr ""
 "central water supply system during wartime or other "
 "emergencies.                                    "
 
-#: .\pages\templates\parts\slide2.html:53
+#: .\pages\templates\parts\slide2.html:61
 msgid ""
 "\n"
 "                        Технологічне ноу-хау системи враховує унікальні "
@@ -343,7 +343,7 @@ msgstr ""
 "incoming water from any source of water supply of any degree of "
 "pollution.                                    "
 
-#: .\pages\templates\parts\slide2.html:65
+#: .\pages\templates\parts\slide2.html:73
 msgid "Технічні характеристики"
 msgstr "Specifications"
 
@@ -463,7 +463,7 @@ msgid ""
 "екологічного будівництва з використанням\n"
 "                    попереднього виготовлених конструкцій. Вони дозволяють "
 "оптимальним людським ресурсом та в стислі\n"
-"                    терміни побудувати якісне та безпечне житло\n"
+"                    терміни побудувати якісне та безпечне житло.\n"
 "                "
 msgstr ""
 "\n"
@@ -471,19 +471,7 @@ msgstr ""
 "ecological construction with the use of prefabricated structures. They allow "
 "to build safe good quality housing with optimal human resources and within a "
 "short time frame.                                 "
-
-#: .\pages\templates\parts\slide3.html:99
-msgid ""
-"\n"
-"                    Типові 4-поверхові будинки з квартирною площею 30-35 м "
-"кв. - ідеальне рішення для найкращого\n"
-"                    використання наявної площі будівлі.\n"
 "                "
-msgstr ""
-"\n"
-"                    Typical 4-story houses with a living area of 30-35 "
-"square meters is the ideal solution for the best use of the available "
-"building area.                                "
 
 #: .\pages\templates\parts\slide3.html:125
 msgid "3 ЕТАП"
@@ -538,6 +526,18 @@ msgstr "Parameters error"
 #: .\pages\views.py:92
 msgid "Не знайдено платежу. Мабуть Ви сплатили його раніше "
 msgstr "Payment not found"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    Типові 4-поверхові будинки з квартирною площею 30-35 "
+#~ "м кв. - ідеальне рішення для найкращого\n"
+#~ "                    використання наявної площі будівлі.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "                    Typical 4-story houses with a living area of 30-35 "
+#~ "square meters is the ideal solution for the best use of the available "
+#~ "building area.                                "
 
 #~ msgid ""
 #~ "\n"
