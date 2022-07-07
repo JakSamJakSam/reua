@@ -44,7 +44,11 @@ class BankTransferInfo(models.Model):
     iban = models.CharField(max_length=29, verbose_name="IBAN", blank=True, null=True, default=None)
     correspondent_bank_name= models.CharField(max_length=100, verbose_name="Correspondent bank name", blank=True, null=True, default=None)
     correspondent_bank_bic= models.CharField(max_length=8, verbose_name="Correspondent bank (SWIFT)", blank=True, null=True, default=None)
-    currency = models.CharField(max_length=3, verbose_name=_("Валюта"), choices=((r.value, r.value) for r in Currency) )
+    currency = models.CharField(max_length=3, verbose_name=_("Валюта"), choices=((r.value, r.value) for r in Currency))
+
+    @property
+    def is_national(self) -> bool:
+        return self.currency == Currency.UAH.value
 
     def __str__(self):
         return f'{self.name} ({self.project})'
