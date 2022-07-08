@@ -1,0 +1,65 @@
+{% load static %}
+{% load i18n %}
+
+<div class="offcanvas offcanvas-start bg-dark offcanvas-payment" tabindex="-1" id="payment-select-payment-type">
+    <div class="d-flex mx-2">
+        <a href="#payment-select-project" data-bs-toggle="offcanvas" class="btn btn-dark ms-auto">
+            <i class="fa-solid fa-arrow-left fa-2x"></i>
+        </a>
+        {#        <button type="button" class="btn btn-dark ms-auto" data-bs-dismiss="offcanvas"#}
+        {#                aria-label="Close">#}
+        {#            <i class="fa-solid fa-xmark fa-2x"></i>#}
+        {#        </button>#}
+    </div>
+    <div class="offcanvas-header text-block mx-auto ">
+        <img src="{% static "reua/img/logo.png" %}" alt="reUA logo" class="w-100"/>
+    </div>
+    <div class="offcanvas-body mt-5 text-block mx-auto">
+        <h3 class="fw-normal text-white">{% trans "Оберіть форму оплати" %}</h3>
+        <ul class="list-unstyled d-flex flex-column gap-4">
+            <li>
+                <a href="#liqpay_offcanvas"
+                   class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3"
+                   data-payment_type="credit_card"
+                >
+                    {% trans "Кредитна карта" %}
+                </a>
+            </li>
+            <li>
+                <a href="#bank_acc_payment"
+                   class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3"
+                   data-payment_type="bank_account"
+                >
+                    {% trans "Банківський переказ" %}
+                </a>
+            </li>
+            <li>
+                <a href="#" class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3"
+                   data-payment_type="paypal"
+                >
+                    PayPal
+                </a>
+            </li>
+            <li>
+                <a href="https://reua.pay.whitepay.com/"
+                   class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3"
+                   data-payment_type="crypto"
+                >
+                    {% trans "Криптовалюта" %}
+                </a>
+            </li>
+        </ul>
+        <div class="form-check text-white">
+            <input class="form-check-input" type="checkbox" value="" id="public_offer_agree">
+            <label class="form-check-label" for="flexCheckChecked">
+                {% trans "Я погоджуюсь з умовами" %}
+                <a href="{{ public_offer_url }}" class="text-decoration-none text-warning" target="_blank">
+                    {% trans "договору публічної оферти" %}
+                </a>
+            </label>
+            <div class="invalid-feedback">
+                Ви повинні погодитися перед внесенням коштів.
+            </div>
+        </div>
+    </div>
+</div>

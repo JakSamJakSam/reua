@@ -1,0 +1,51 @@
+{% load static %}
+{% load i18n %}
+
+<div class="offcanvas offcanvas-start bg-dark offcanvas-payment" tabindex="-1" id="liqpay_offcanvas">
+    <div class="d-flex mx-2">
+        <a href="#payment-select-payment-type" data-bs-toggle="offcanvas" class="btn btn-dark ms-auto">
+            <i class="fa-solid fa-arrow-left fa-2x"></i>
+        </a>
+    </div>
+    <div class="offcanvas-header text-block mx-auto ">
+        <img src="{% static "reua/img/logo.png" %}" alt="reUA logo" class="w-100"/>
+    </div>
+    <div class="offcanvas-body mt-5 text-block mx-auto">
+        <h3 class="fw-normal text-white">{% trans "Оберіть суму та валюту платежу" %}</h3>
+        <form method="get" action="{% url "liqpay-form" %}" id="liqpay-payment-form">
+            {% csrf_token %}
+            {{ paymentform.non_field_errors }}
+            <input type="hidden" name="project" value="">
+            <label for="{{ paymentform.amount.id_for_label }}" class="form-label">{{ paymentform.amount.label }}</label>
+            <div class="input-group {% if paymentform.amount.errors or form.currency.errors %}is-invalid{% endif %}">
+                <input
+                        type="number"
+                        class="form-control flex-fill {% if form.amount.errors %}is-invalid{% endif %}"
+                        id="{{ paymentform.amount.id_for_label }}"
+                        name="{{ paymentform.amount.html_name }}"
+                        value="{{ paymentform.amount.initial }}"
+                >
+                <select
+                        class="form-select flex-grow-0 w-auto {% if paymentform.currency.errors %}is-invalid{% endif %}"
+                        id="{{ paymentform.currency.id_for_label }}"
+                        name="{{ paymentform.currency.html_name }}"
+                        value="{{ paymentform.currency.initial }}"
+                >
+                    {% for s in paymentform.currency.subwidgets %}
+                        {{ s }}
+                    {% endfor %}
+                </select>
+            </div>
+            {% if paymentform.amount.errors or paymentform.currency.errors %}
+                <div class="invalid-feedback">
+                    {{ paymentform.amount.errors }}
+                    <hr/>
+                    {{ paymentform.currency.errors }}
+                </div>
+            {% endif %}
+        </form>
+
+        <div id="liqpay_form">
+        </div>
+    </div>
+</div>

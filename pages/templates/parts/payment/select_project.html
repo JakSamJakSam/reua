@@ -1,0 +1,29 @@
+{% load static %}
+{% load i18n %}
+
+<div class="offcanvas offcanvas-start bg-warning offcanvas-payment" tabindex="-1" id="payment-select-project">
+    <div class="d-flex mx-2">
+        <button type="button" class="btn _btn-close text-reset ms-auto" data-bs-dismiss="offcanvas"
+                aria-label="Close">
+            <i class="fa-solid fa-xmark fa-2x"></i>
+        </button>
+    </div>
+    <div class="offcanvas-header text-block mx-auto ">
+        <img src="{% static "reua/img/footer_logo.png" %}" alt="reUA logo" class="w-100"/>
+    </div>
+    <div class="offcanvas-body mt-5 text-block mx-auto">
+        <h3 class="fw-normal ">{% trans "Оберіть категорію внеску" %}</h3>
+        <ul class="list-unstyled d-flex flex-column gap-4">
+            {% for proj in projects %}
+                <li>
+                    <a href="#payment-select-payment-type" data-bs-toggle="offcanvas"
+                       class="btn btn-light text-uppercase w-100 text-uppercase fw-500 p-3 {% if proj.disabled %} disabled {% endif %}"
+                       data-project="{{ proj.identity }}"
+                    >
+                        {{ proj.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

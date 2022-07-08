@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+    {% trans "Внесок не здійснено." %}
+{% endblock %}
+{% block body %}
+    <main>
+        <div class="container-fluid">
+            <div class="text-center bg-dark text-white landing_row row landing_block ">
+                <div class="col col-12 col-lg-6 landing_col pb-0">
+                    <div class="mx-auto text-left text-block">
+                        <div class="text-primary">
+                            <h2 class="text-uppercase fw-bold mb-5 text-danger">
+                                {% trans "На жаль внесок не пройшов :-(" %}
+                            </h2>
+                        </div>
+                        <a href="{% url "index" %}" class="btn btn-large btn-warning text-black w-100">
+                            Повернутись на головну сторінку
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

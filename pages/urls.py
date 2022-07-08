@@ -19,6 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
-    path('make-donation', PaymentStart.as_view(), name='donation'),
-    path('payment/<uuid:order_id>', PaymentFinish.as_view(), name='payment')
+    path('get-liqpay-form', LiqPayForm.as_view(), name='liqpay-form'),
+    path('thanks-for-payment', Thanks.as_view(), name='thanks-for-payment'),
+    path('payment-error', Error.as_view(), name='payment-error'),
+
 ]

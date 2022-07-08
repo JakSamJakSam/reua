@@ -1,0 +1,6 @@
+{% load i18n %}
+<form action="https://www.liqpay.ua/api/3/checkout/">
+    <input type="hidden" name="data" value="{{ data }}">
+    <input type="hidden" name="signature" value="{{ signature }}">
+    <button type="submit" class="btn btn-warning p-3 w-100 text-uppercase fw-500 mt-3">{% trans "Зробити внесок" %}</button>
+</form>

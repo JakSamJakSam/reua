@@ -4,6 +4,7 @@
   const data = JSON.parse(document.getElementById('projects-info').textContent);
   const paymentTypeOffcanvas = document.getElementById('payment-select-payment-type')
   const paymentBankOffcanvas = document.getElementById('bank_acc_payment')
+  const liqPayOffcanvas = document.getElementById('liqpay_offcanvas')
   const projectsData = data.reduce((R, {identity, ...p}) => ({
     ...R,
     [identity]: p
@@ -37,10 +38,16 @@
       }
       return check_agree;
     }
-    if (projectsData[project].cardURL) {
+    if (projectsData[project].cardURL || true) {
+      const nextOffCanvas = ccButton.getAttribute('href');
+      const onSuccess = () => {
+        const ofCanvas = bootstrap.Offcanvas.getOrCreateInstance(document.querySelector(nextOffCanvas));
+        const currentofCanvas = bootstrap.Offcanvas.getOrCreateInstance(paymentTypeOffcanvas);
+        currentofCanvas.hide();
+        ofCanvas.show();
+      };
+      ccButton.addEventListener('click', get_check_agree(onSuccess))
       removeClass(ccButton, 'disabled')
-      ccButton.setAttribute('href', projectsData[project].cardURL)
-      ccButton.addEventListener('click', get_check_agree())
     } else {
       addClass(ccButton, 'disabled')
     }
@@ -111,6 +118,36 @@
       }
     )
   })
+
+  const liqpayform = liqPayOffcanvas.querySelector('#liqpay-payment-form');
+  const liqpay_container = liqPayOffcanvas.querySelector('#liqpay_form');
+
+  async function refreshPaymentForm(){
+    const formdata = new FormData(liqpayform);
+    formdata.append('project', paymentTypeOffcanvas.dataset.project);
+    const url = liqpayform.getAttribute('action');
+    while (liqpay_container.firstChild) {
+      liqpay_container.removeChild(liqpay_container.firstChild);
+    }
+    const r = await fetch(url, {
+      method: 'POST',
+      body: formdata,
+    })
+    if (r.ok){
+      const d = await r.text();
+      liqpay_container.innerHTML = d;
+    }
+  }
+
+  liqPayOffcanvas.addEventListener('show.bs.offcanvas', refreshPaymentForm)
+  liqpayform.addEventListener('submit', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+  liqpayform.querySelectorAll('input, select')
+    .forEach(el => el.addEventListener('change', refreshPaymentForm));
+
+
 
   return {
     data: projectsData,
