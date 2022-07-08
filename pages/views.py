@@ -1,3 +1,4 @@
+import logging
 import uuid
 from functools import reduce
 
@@ -105,6 +106,12 @@ class LiqPayForm(TemplateView):
 
 class Thanks(TemplateView):
     template_name = "payment/thanks.html"
+    
+    def dispatch(self, request, *args, **kwargs):
+        logger = logging.getLogger('liqpay')
+        msg = f'{request.method} : {request.GET} | {request.POST}'
+        logger.info(msg)
+        return super(Thanks, self).dispatch(request, *args, **kwargs)
 
 class Error(TemplateView):
     template_name = "payment/error.html"
