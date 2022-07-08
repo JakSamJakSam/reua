@@ -92,6 +92,7 @@ class LiqPayForm(TemplateView):
                 'description': f'Donation for {form_data["project"]}',  # TODO: определить назначение платежа
                 # 'order_id': str(form_data['order_id']),
                 'version': '3',
+                'order_id': str(uuid.uuid4()),
                 'sandbox': settings.LIQPAY_SANDOX_MODE,  # sandbox mode, set to 1 to enable it
                 'result_url': f'https://{domain}{reverse("thanks-for-payment")}',
                 'language': langauge,
