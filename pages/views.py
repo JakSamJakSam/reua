@@ -24,6 +24,7 @@ def get_projects_data():
         'disabled': p.disabled,
         'cryptoURL': p.cryptoURL,
         'cardURL': p.cardURL,
+        'paypalURL': p.paypalURL,
         'bank_accounts': p.transfers.exists(),
     } for p in Project.objects.all()]  # TODO Cashe it
     return projects

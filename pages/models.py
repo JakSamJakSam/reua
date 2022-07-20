@@ -13,6 +13,7 @@ class Project(models.Model):
     disabled = models.BooleanField(verbose_name=_('Відключено'), blank=True, default=False)
     cryptoURL = models.URLField(verbose_name=_("Адреса платіжної системи для 'crypto'"), blank=True, null=True, default=None)
     cardURL = models.URLField(verbose_name=_("Адреса платіжної системи для 'credit-card'"), blank=True, null=True, default=None)
+    paypalURL = models.URLField(verbose_name=_("Адреса платіжної системи для 'PAYPAL'"), blank=True, null=True, default=None)
 
     @property
     def title(self):

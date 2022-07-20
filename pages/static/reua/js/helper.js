@@ -62,7 +62,13 @@
     }
     // PAYPAL
     const paypalButton = paymentTypeOffcanvas.querySelector('[data-payment_type="paypal"]');
-    addClass(paypalButton, 'disabled')
+    if (projectsData[project].paypalURL) {
+      paypalButton.setAttribute('href', projectsData[project].paypalURL)
+      removeClass(paypalButton, 'disabled')
+      paypalButton.addEventListener('click', get_check_agree())
+    } else {
+      addClass(paypalButton, 'disabled')
+    }
 
     // bank
     const bankButton = paymentTypeOffcanvas.querySelector('[data-payment_type="bank_account"]');
