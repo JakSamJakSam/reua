@@ -63,7 +63,7 @@ html{
 
 /*#slide2 > .col:first-child{*/
 #slide2{
-    background: url("../img/slide2_bg.png") no-repeat center left;
+    background: url("../img/slide2_new_bg.png") no-repeat center left;
     background-size: cover;
 }
 
